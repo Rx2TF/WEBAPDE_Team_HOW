@@ -57,23 +57,27 @@
     <!-- /#sidebar-wrapper -->
 
     <div id="appContent">
+        <ul id="loginDropdown" class="dropdown-content">
+            <form>
+                <li>
+                    <input type="text" class="validate">
+                    <label>Username</label>
+                </li>
+                <li>
+                    <input type="password" class="validate">
+                    <label>Password</label>
+                </li>
+            </form>
+        </ul>
         <nav>
             <div class="nav-wrapper">
                 <a href="index.html" class="brand-logo center">Mediwhere</a>
                 <ul class="left">
                     <li><a href="#" onclick='load("emergency.html")'>Emergency Hotlines</a></li>
+                    <li><a href="#" onclick='load("doctors.html")'>View Doctors</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="#" onclick='load("doctors.html")'>Doctors</a></li>
-                    <li>
-                        <form>
-                            <div class="input-field">
-                                <input id="doctor-search" type="search">
-                                <label for="doctor-search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
-                    </li>
+                    <li><a href="#" class="dropdown-button" data-activates="loginDropdown">Log In<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             </div>
         </nav>

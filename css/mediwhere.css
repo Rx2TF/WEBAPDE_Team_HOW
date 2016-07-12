@@ -7,10 +7,3 @@
     height: 100%;
     transition: all 0.5s ease;
 }
-
-@media(min-width:768px) {
-    .map {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-}

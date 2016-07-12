@@ -38,11 +38,13 @@
 		var smpch = {lat: 14.59911613, lng: 121.03168309}; <!-- St. Martin de Porres Charity Hospital Coords -->
 		var csmc = {lat: 14.597604, lng: 121.045845}; <!-- Cardinal Santos Medical Center Coords -->
 	
-		var marker = new google.maps.Marker({position: sjmc, map: map, title: 'San Juan Medical Center'});
-		var marker = new google.maps.Marker({position: smpch, map: map, title: 'San Juan Medical Center'});
-		var marker = new google.maps.Marker({position: csmc, map: map, title: 'San Juan Medical Center'});
+		var sjmcmarker = new google.maps.Marker({position: sjmc, map: map, title: 'San Juan Medical Center'});
+		var smpchmarker = new google.maps.Marker({position: smpch, map: map, title: 'St. Martin de Porres Charity Hospital'});
+		var csmcmarker = new google.maps.Marker({position: csmc, map: map, title: 'Cardinal Santos Medical Center'});
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+		
+		
 		
 		
     </script>

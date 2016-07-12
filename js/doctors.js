@@ -8,8 +8,12 @@ var docs = [new doc("Margarita Agdamag", "Obstetrics and Gynecology"), new doc("
 function print(){
     var x = document.getElementById("dropdown").value;
     var table = document.getElementById("table");
-    
-    console.log(x);
+    console.log(document.getElementById("table").rows.length);
+    for(var y = 1; y < document.getElementById("table").rows.length; y++){
+        console.log(y + " " + document.getElementById("table").rows.length);
+        document.getElementById("table").deleteRow(y);
+    }
+
     if(x == "any"){
         for(var i = 0; i < docs.length; i++){
             var row = table.insertRow(i + 1);
@@ -25,9 +29,3 @@ function print(){
     }
 }
 
-function delete() {
-    for(i = 1; i < document.getElementById("table").rows.length; i++){
-        document.getElementById("table").deleteRow(i);
-    }
-    print
-}

@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel=""
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content-"IE=edge">
-        <meta name="viewort" content="width=device-width, initial-scale=1">
+        <meta name="viewort" content="width=device-width, initial-scale=1.0">
 
         <title>Mediwhere</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="css/material.min.css">
+        <script src="js/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/material.pink-indigo.min.css">
 
-        <!-- Custom CSS -->
-
-        <link href="css/mediwhere.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/mediwhere.css">
 
         <script src="http://maps.googleapis.com/maps/api/js"></script>
     </head>
 
     <body>
-
-        <div id="googleMap"></div>
-
-        <!-- jQuery -->
-        <script src="js/jquery-2.2.4.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Mediwhere</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Mediwhere</span>
+                <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div id="googleMap"></div>
+                </div>
+            </main>
+        </div>
 
         <script src="js/mediwhere-map.js"></script>
     </body>

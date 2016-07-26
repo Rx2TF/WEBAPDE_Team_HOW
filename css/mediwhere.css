@@ -1,4 +1,15 @@
+body, html {
+    height: 100%;
+}
+
 #googleMap {
-    width: 500px;
-    height: 500px;
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+
+.mdl-layout__header-row {
+    padding-left: 70px;
 }

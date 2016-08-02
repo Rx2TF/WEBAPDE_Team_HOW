@@ -15,11 +15,12 @@ input[type="search"] {
 }
 
 #rating1{
-	height: 20px;
+	top: 100px;
 	width: 100px;
-	background-image: url('img_src/rating.png')
-	background-position: 0px 85px;
-	
+	height: 367px;
+	position: absolute;
+	clip: rect(10px,auto,35px,auto);
+	overflow: hidden;
 }
 
 .map {

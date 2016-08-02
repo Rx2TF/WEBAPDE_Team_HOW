@@ -1,7 +1,6 @@
 body, html {
     height: 100%;
 }
-
 #googleMap {
     position:relative;
     top: 0;
@@ -9,7 +8,32 @@ body, html {
     width: 100%;
     height: calc(100vh - 64px);
 }
-
-.mdl-layout__header-row {
-    padding-left: 70px;
+#signin-form{
+    text-align: center;
 }
+#signin-form button {
+    width: 128px;
+}
+.mw-container-small {
+    min-width: 360px;
+    max-width: 480px;
+    margin: auto;
+}
+.mw-link-no-decor {
+    text-decoration: none;
+    color: white;
+}
+.content {
+    position: relative;
+    top: 48px;
+}
+.mdl-card__title {
+    color: white;
+    background-color: rgb(233,30,99);
+}
+
+ @media screen and (max-width: 1024px) {
+     #googleMap {
+         height: calc(100vh - 56px);
+     }
+ }

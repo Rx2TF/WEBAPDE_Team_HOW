@@ -25,7 +25,6 @@ function initialize() {
                                 +'<p id="sjmcheader">San Juan Medical Center</p>'
                                 +'<div id="sjmc-info">'
                                 +'<p>Location : N Domingo St, San Juan, Metro Manila, Philippines</p>'
-								+'Accesibility : <img id="rating1" src="img_src/rating.png">'
                                 /*+'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
                                                                 +'Dental Services<br>General Surgery<br>Ophthalmology<br>Anaesthesia<br>Pediatrics<br>Out-Patient Department<br>'
                                                                 +'Medical Social Service</p>'

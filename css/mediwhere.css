@@ -52,6 +52,21 @@ body, html, page-content {
     max-width: 480px;
     margin: 16px auto;
 }
+.card-doctor .mdl-card__title img{
+    position: absolute;
+    top: 14px;
+    left: 101px;
+    margin: 20px auto;
+    height: 128px;
+    border-radius: 50%;
+}
+.card-doctor .mdl-card__supporting-text {
+    text-align: center;
+    margin-top: 16px;
+}
+.card .mdl-card__title {
+    height: 100px;
+}
 .mdl-card__title {
     color: white;
     background-color: rgb(233,30,99);

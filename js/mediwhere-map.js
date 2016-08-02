@@ -25,12 +25,12 @@ function initialize() {
                                 +'<p id="sjmcheader">San Juan Medical Center</p>'
                                 +'<div id="sjmc-info">'
                                 +'<p>Location : N Domingo St, San Juan, Metro Manila, Philippines</p>'
-                                +'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
+                                /*+'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
                                                                 +'Dental Services<br>General Surgery<br>Ophthalmology<br>Anaesthesia<br>Pediatrics<br>Out-Patient Department<br>'
                                                                 +'Medical Social Service</p>'
                                 +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
                                                                 +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
-                                                                +'Medical Records Room<br>Dietary Room</p>'
+                                                                +'Medical Records Room<br>Dietary Room</p>'*/
                                 +'</div>'
                                 +'</div>';
 
@@ -48,12 +48,12 @@ function initialize() {
                                 +'<p id="smpchheader">St. Marvin de Porres Charity Hospital</p>'
                                 +'<div id="smpch-info">'
                                 +'<p>Location : 70 A. Bonifacio St., San Juan, Metro Manila, Philippines</p>'
-                                +'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
+                                /*+'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
                                                                 +'Dental Services<br>General Surgery<br>Ophthalmology<br>Anaesthesia<br>Pediatrics<br>Out-Patient Department<br>'
                                                                 +'Medical Social Service</p>'
                                 +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
                                                                 +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
-                                                                +'Medical Records Room<br>Dietary Room</p>'
+                                                                +'Medical Records Room<br>Dietary Room</p>'*/
                                 +'</div>'
                                 +'</div>';
                                 
@@ -71,14 +71,14 @@ function initialize() {
                                 +'<p id="csmcheader">Cardinal Santos Medical Center</p>'
                                 +'<div id="csjmc-info">'
                                 +'<p>Location : 10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines</p>'
-                                +'<h6>Services</h6><p>Anaesthology<br>Dental Services<br>Obstetrics and Gynecology<br>Ophthalmology<br>Pathology<br>Pediatrics<br>'
+                                /*+'<h6>Services</h6><p>Anaesthology<br>Dental Services<br>Obstetrics and Gynecology<br>Ophthalmology<br>Pathology<br>Pediatrics<br>'
                                                                 +'Radiology<br>Rehabilitation<br>Surgery<br>Bone Densitometry<br>Endoscopy<br>MRI<br>Cardio-Neuro-Pulmonary Services<br>'
                                                                 +'Hemodialysis<br>Marine Medical Services</p>'
                                 +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
                                                                 +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
                                                                 +'Medical Records Room<br>Dietary Room<br>Cancer Center<br>Eye Center<br>Hand Center<br>Pathology and Laboratory<br>'
                                                                 +'Cardiac Catheterization Laboratory<br>Womens Care<br>Lactation Room<br>Rehabilitation Center<br>Researcg Center<br>'
-                                                                +'Urology and Stone Center<br>Wellness Center<br>Philippine Gamma Knife</p>'
+                                                                +'Urology and Stone Center<br>Wellness Center<br>Philippine Gamma Knife</p>'*/
                                 +'</div>'
                                 +'</div>';
 

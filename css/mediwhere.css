@@ -2,17 +2,27 @@ body, html {
     height: 100%;
 }
 #googleMap {
-    position:relative;
+    position:absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: calc(100vh - 64px);
+    z-index: 0;
+}
+#leftDock {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
 }
 #signin-form{
     text-align: center;
 }
 #signin-form button {
     width: 128px;
+}
+.dock {
+    min-width: 420px;
 }
 .mw-container-small {
     min-width: 360px;

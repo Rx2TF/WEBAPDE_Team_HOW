@@ -24,7 +24,7 @@
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <a class="mw-link-no-decor" href="index.html"><span class="mdl-layout-title">Mediwhere</span></a>
+                <a class="mw-link-no-decor" href="./"><span class="mdl-layout-title">Mediwhere</span></a>
                 <!-- Spacer -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->

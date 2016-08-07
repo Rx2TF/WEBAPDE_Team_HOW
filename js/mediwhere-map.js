@@ -64,6 +64,10 @@ function initialize() {
                         "<td id='infw-ambiance'>" + numberToStar(hospital.ambiance) +"</td>" +
                     "</th>" +
                 "</table>" +
+                "<div>" +
+                    "<button class='mdl-button mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>first_page</i>Dock Left</button>" +
+                    "<button class='mdl-button mdl-js-button mdl-js-ripple-effect'>Dock Right<i class='material-icons'>last_page</i></button>" +
+                "</div>" +
             "</div>";
         google.maps.event.addListener(hospitalMarker, 'click', function() {
             infoWindow.setContent(infoWindowContent);

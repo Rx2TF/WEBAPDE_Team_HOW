@@ -75,7 +75,7 @@ CREATE TABLE `mediwhere`.`admins` (
 
 CREATE TABLE `mediwhere`.`comments` (
   `commentid` BIGINT NOT NULL AUTO_INCREMENT,
-  `hospitalid` INT NOT NULL,
+  `hospital` INT NOT NULL,
   `userid` INT NOT NULL,
   `comment` VARCHAR(1000) NOT NULL,
   PRIMARY KEY (`commentid`));
@@ -105,5 +105,12 @@ ALTER TABLE `mediwhere`.`comments`
 ADD CONSTRAINT `userid`
   FOREIGN KEY (`userid`)
   REFERENCES `mediwhere`.`users` (`userid`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `mediwhere`.`comments` 
+ADD CONSTRAINT `hospital`
+  FOREIGN KEY (`hospital`)
+  REFERENCES `mediwhere`.`hospital` (`hospitalid`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;

@@ -10,7 +10,7 @@ CREATE TABLE `mediwhere`.`users` (
   PRIMARY KEY (`userid`));
 
 CREATE TABLE `mediwhere`.`doctors` (
-  `doctorid` INT NOT NULL,
+  `doctorid` INT NOT NULL AUTO_INCREMENT,
   `hospitalid` INT NOT NULL,
   `last name` VARCHAR(45) NOT NULL,
   `first name` VARCHAR(45) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `mediwhere`.`doctors` (
   PRIMARY KEY (`doctorid`));
 
 CREATE TABLE `mediwhere`.`hospital` (
-  `hospitalid` INT NOT NULL,
+  `hospitalid` INT NOT NULL AUTO_INCREMENT,
   `serviceid` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `hotline` VARCHAR(15) NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `mediwhere`.`hospital` (
   PRIMARY KEY (`hospitalid`));
 
 CREATE TABLE `mediwhere`.`services` (
-  `serviceid` INT NOT NULL,
+  `serviceid` INT NOT NULL AUTO_INCREMENT,
   `anasthesia` BIT NOT NULL,
   `bar` BIT NOT NULL,
   `cardio` BIT NOT NULL,
@@ -62,6 +62,22 @@ CREATE TABLE `mediwhere`.`services` (
   `uro` BIT NOT NULL,
   `vitreo` BIT NOT NULL,
   PRIMARY KEY (`serviceid`));
+
+CREATE TABLE `mediwhere`.`admins` (
+  `adminid` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`adminid`));
+
+CREATE TABLE `mediwhere`.`comments` (
+  `commentid` BIGINT NOT NULL AUTO_INCREMENT,
+  `hospitalid` INT NOT NULL,
+  `userid` INT NOT NULL,
+  `comment` VARCHAR(1000) NOT NULL,
+  PRIMARY KEY (`commentid`));
+
 
 ALTER TABLE `mediwhere`.`hospital` 
 ADD INDEX `serviceid_idx` (`serviceid` ASC);

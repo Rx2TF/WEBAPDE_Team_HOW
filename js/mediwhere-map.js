@@ -1,4 +1,3 @@
-var hospitals = [];
 var map;
 var window = false;
 var infoWindow;
@@ -101,3 +100,9 @@ function numberToStar(rating){
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(document.getElementById('googleMap'), "bounds_changed", function() {
+    alert("boo");
+    var curCenter = map.getCenter();
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(curCenter);
+});

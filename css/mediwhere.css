@@ -5,21 +5,27 @@ body, html, page-content {
 #googleMap {
     position:absolute;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: calc(100vh - 64px);
     z-index: 0;
+    transition: all .5s ease;
 }
 #leftDock {
     position: absolute;
     top: 0;
     bottom: 0;
     z-index: 1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: all .5s ease;
 }
 #rightDock {
     position: absolute;
     top: 0;
     bottom: 0;
     z-index: 1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 .dock {
     min-width: 400px;
@@ -27,25 +33,29 @@ body, html, page-content {
 .ld-show {
     left: 0;
 }
-.ld-show + #googleMap {
-    left: 400px;
-    width: calc(100% - 400px);
-}
 .ld-hide {
     left: -400px;
+}
+#googleMap.gm-ld-show {
+    left: 400px;
+    width: calc(100% - 400px);
+    transition: all .5s ease;
 }
 #googleMap.gm-rd-show {
     right: 400px;
     width: calc(100% - 400px);
+    transition: all .5s ease;
 }
 #googleMap.gm-rd-hide {
     right: 0;
 }
 #googleMap.gm-ld-show.gm-rd-show {
     width: calc(100% - 800px);
+    transition: all .5s ease;
 }
 .rd-show {
     right: 0;
+    transition: all .5s ease;
 }
 .rd-hide {
     right: -400px;

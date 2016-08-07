@@ -53,11 +53,11 @@
             </div>
             <main class="mdl-layout__content">
                 <div class="page-content">
-                    <div id="leftDock" class="ld-hide">
+                    <div id="leftDock" class="dock ld-hide">
                     Test shit.
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
-                    <div id="rightDock" class="rd-hide">
+                    <div id="rightDock" class="dock rd-hide">
                     Shit test.
                     </div>
                 </div>

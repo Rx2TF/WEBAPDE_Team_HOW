@@ -63,19 +63,29 @@
                 </div>
             </main>
         </div>
-        <?php
-            $sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
-            $result = $conn->query($sql);
-            $hospitals = array();
-            while($row = mysqli_fetch_array($result)) {
-                $hospitals[] = $row;
-            }
-            print json_encode($hospitals);
-        ?>
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/navigation.js"></script>
         <script src="js/mediwhere-map.js"></script>
         <script>
+            var hospitals = 
+            <?php
+                $sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
+                $result = $conn->query($sql);
+                $hospitals = array();
+                while($row = mysqli_fetch_array($result)) {
+                    $hospital = array("name" => $row["hospital_name"],
+                        "address" => $row["address"],
+                        "lat" => $row["lat"],
+                        "lng" => $row["longh"],
+                        "accessibility" => $row["access"],
+                        "affordablity" => $row["afford"],
+                        "ambiance" => $row["ambiance"]);
+                    $hospitals[] = $hospital;
+                };
+                    
+                echo json_encode($hospitals);
+            ?>;
+            console.log(hospitals);
             componentHandler.upgradeAllRegistered();
         </script>
     </body>

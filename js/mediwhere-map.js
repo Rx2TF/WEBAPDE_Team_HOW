@@ -26,16 +26,19 @@ function initialize() {
         border: '7px',})
     });
 
-    loadHospital(14.606804, 121.023479, 'San Juan Medical Center', 'N Domingo St, San Juan, Metro Manila, Philippines', 5, 4.5, 4);
-    loadHospital(14.59911613, 121.03168309, 'St. Martin de Porres Charity Hospital', '70 A. Bonifacio St., San Juan, Metro Manila, Philippines', 3.5, 3, 2.5);
-    loadHospital(14.597604, 121.045845, 'Cardinal Santos Medical Center', '10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines', 2, 1.5, 1);
+    //loadHospital(14.606804, 121.023479, 'San Juan Medical Center', 'N Domingo St, San Juan, Metro Manila, Philippines', 5, 4.5, 4);
+    //loadHospital(14.59911613, 121.03168309, 'St. Martin de Porres Charity Hospital', '70 A. Bonifacio St., San Juan, Metro Manila, Philippines', 3.5, 3, 2.5);
+    //loadHospital(14.597604, 121.045845, 'Cardinal Santos Medical Center', '10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines', 2, 1.5, 1);
 
     // Add markers and content for each hospital in hospitals[]
     hospitals.forEach(function(hospital) {
+        console.log(hospital);
         var hospitalPosition = {
-            lat: hospital.lat,
-            lng: hospital.lng
+            lat: parseFloat(hospital.lat),
+            lng: parseFloat(hospital.lng)
         }
+        console.log("lat" + hospital.lat);
+        console.log(hospitalPosition);
         var hospitalMarker = new google.maps.Marker({
             position: hospitalPosition,
             map: map,

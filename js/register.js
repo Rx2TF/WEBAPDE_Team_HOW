@@ -7,11 +7,10 @@ function register(){
 	<?php
 		 $sql = "SELECT DISTINCT(email) FROM users WHERE email =" 'email';
 		 $result = $conn->query($sql);
-		 $contacts = array();
-		 while($row = mysqli_fetch_array($result)) {
-			 $contact = array("name" => $row["hospital_name"],
-			 "hotline" => $row["hotline"]);
-			 $contacts[] = $contact;
+		 if(mysqli_fetch_array($result) != 'email') {
+			if('password' == 'password-check'){
+				
+			} 
 		 }
 		 
 		 echo json_encode($contacts);

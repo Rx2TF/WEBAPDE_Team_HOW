@@ -8,11 +8,11 @@
         <div class="mdl-card__supporting-text">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="givenName" required>
-                <label class="mdl-textfield__label" for="givenName" id="givenName">First Name</label>
+                <label class="mdl-textfield__label" for="givenName" >First Name</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="LastName" required>
-                <label class="mdl-textfield__label" for="lastName">Last Name</label>
+                <label class="mdl-textfield__label" for="lastName" >Last Name</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="email" id="email" required>

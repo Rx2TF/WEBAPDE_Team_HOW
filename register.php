@@ -8,7 +8,7 @@
         <div class="mdl-card__supporting-text">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="givenName" required>
-                <label class="mdl-textfield__label" for="givenName">First Name</label>
+                <label class="mdl-textfield__label" for="givenName" id="givenName">First Name</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="LastName" required>
@@ -30,13 +30,17 @@
             </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-            <button onclick="load('register.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			<button onclick="register()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			
+			</button>
+            <!--<button onclick="load('register.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                 Register
-            </button>
+            </button> -->
         </div>
     </form>
 <div>
 </div>
+<script src = "js/register.js"></script>
 <script>
     componentHandler.upgradeAllRegistered();
 </script>

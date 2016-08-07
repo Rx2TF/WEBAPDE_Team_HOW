@@ -34,7 +34,7 @@
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <!-- TODO: replace with login check script -->
                     <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i></a>
-                    <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">local_hospital</i></a>
+                    <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i></a>
                     <button type="submit" onclick="load('signin.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                         Sign In
                     </button>
@@ -47,7 +47,7 @@
                 <button type="submit" onclick="load('signin.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                     Sign In
                 </button>
-                <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">local_hospital</i> Emergency Hotlines</a>
+                <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i> Emergency Hotlines</a>
                 <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i> Doctors</a> 
                 </nav>
             </div>
@@ -58,6 +58,9 @@
                             <div id="ld-title" class="d-title">
                                 <h1 id="ld-name">Name Here</h1>
                             </div>
+                            <button id="ld-close" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">close</i>
+                            </button>
                         </div>
                         <div id="ld-information">
                             <table>
@@ -70,6 +73,14 @@
                                     <td id="ld-inf-hotline">Contact Number</td>
                                 </tr>
                             </table>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class='material-icons'>assignment_ind</i>
+                                <span id="ld-inf-doctors">Doctors</span>
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class='material-icons'>local_hospital</i>
+                                <span id="ld-inf-services">Services</span>
+                            </button>
                         </div>
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>

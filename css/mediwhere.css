@@ -31,6 +31,9 @@ body, html, page-content {
 .dock {
     min-width: 400px;
 }
+.dock i {
+    color: #536dfe;
+}
 .ld-show {
     left: 0;
 }
@@ -74,8 +77,19 @@ body, html, page-content {
     background-color: #e91e63;
     padding: 8px 24px 16px;
 }
+#ld-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 #ld-name {
     font-size: 24px;
+}
+#ld-information {
+    padding: 8px 24px 16px;
+}
+#ld-information i {
+    padding: 0 16px 0 0;
 }
 #signin-form{
     text-align: center;

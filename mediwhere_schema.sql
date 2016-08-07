@@ -96,3 +96,12 @@ ADD CONSTRAINT `hospitalid`
   REFERENCES `mediwhere`.`hospital` (`hospitalid`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+ALTER TABLE `mediwhere`.`comments` 
+ADD INDEX `userid_idx` (`userid` ASC);
+ALTER TABLE `mediwhere`.`comments` 
+ADD CONSTRAINT `userid`
+  FOREIGN KEY (`userid`)
+  REFERENCES `mediwhere`.`users` (`userid`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

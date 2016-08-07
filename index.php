@@ -75,10 +75,12 @@
             } 
             echo "Connected successfully";
             
-            $sql = "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital";
-            $result = $conn->query($sql);
-            
-            echo json_encode($result);
+             $sql = mysqli_query("SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital");
+			$rows = array();
+			while($r = mysqli_fetch_assoc($sth)) {
+			$rows[] = $r;
+			}
+			print json_encode($rows);
 		?>
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/navigation.js"></script>

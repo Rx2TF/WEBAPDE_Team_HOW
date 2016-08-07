@@ -69,6 +69,11 @@
 		} 
 		echo "Connected successfully";
 		
+		$sql = "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital";
+		$result = $conn->query($sql);
+		
+		echo json_encode($result);
+		
 		?>
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/navigation.js"></script>

@@ -125,3 +125,8 @@ INSERT INTO `mediwhere`.`hospital`(serviceid, hospital_name , address, lat,longh
 VALUES(1, "San Juan Medical Center", "N Domingo St, San Juan, Metro Manila, Philippines", 14.606804, 121.023479, "(02) 724 3266", 5, 4.5, 4),
       (2, "St. Martin De Porres Charity Hospital", "70 A. Bonifacio St., San Juan, Metro Manila, Philippines", 14.59911613, 121.03168309, "(072) 307 4143", 3.5, 3, 2.5),
       (3, "Cardinal Santos Medical Center", "10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines", 14.597604, 121.045845, "(02) 727 0001", 2, 1.5, 1);
+
+INSERT INTO doctors(hospitalid, last_name, first_name, special, contact)
+VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069"),
+	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292"),
+	  (3, "Agdamag", "Aaron", "General Surgery", "7261810");

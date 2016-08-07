@@ -1,4 +1,15 @@
 <!DOCTYPE HTML>
+<?php
+
+	 $sql = "SELECT hospitalid, hospital_name, hotline, FROM hospital";
+     $result = $conn->query($sql);
+     $contacts = array();
+     while($row = mysqli_fetch_array($result)) {
+         $contacts[] = $row;
+     }
+     print json_encode($contacts);
+
+?>
 <div class="content-flex">
     <div class="mdl-card mdl-shadow--2dp card">
         <div class="mdl-card__title">

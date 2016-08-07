@@ -7,9 +7,10 @@ function register(){
 	<?php
 		 $sql = "SELECT DISTINCT(email) FROM users WHERE email =" 'email';
 		 $result = $conn->query($sql);
-		 if(mysqli_fetch_array($result) != 'email') {
+		 if($result->num_rows == 0) {
 			if('password' == 'password-check'){
-				
+				var execute ="load('register.html')";
+				document.getElementById(confirm).innerHTML += execute;
 			} 
 		 }
 		 

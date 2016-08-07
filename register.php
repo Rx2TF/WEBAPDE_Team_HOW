@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-			<button onclick="register()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			<button onclick="register()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">
 			
 			</button>
             <!--<button onclick="load('register.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">

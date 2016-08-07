@@ -56,8 +56,20 @@
                     <div id="leftDock" class="dock ld-hide">
                         <div id="ld-header" class="d-header">
                             <div id="ld-title" class="d-title">
-                            Name Here
+                                <h1 id="ld-name">Name Here</h1>
                             </div>
+                        </div>
+                        <div id="ld-information">
+                            <table>
+                                <tr>
+                                    <th><i class='material-icons'>place</i></th>
+                                    <td id="ld-inf-address">Address</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons">local_phone</i></th>
+                                    <td id="ld-inf-hotline">Contact Number</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
@@ -77,7 +89,9 @@
                 $result = $conn->query($sql);
                 $hospitals = array();
                 while($row = mysqli_fetch_array($result)) {
-                    $hospital = array("name" => $row["hospital_name"],
+                    $hospital = array(
+                        "id" => $row["hospitalid"],
+                        "name" => $row["hospital_name"],
                         "address" => $row["address"],
                         "lat" => $row["lat"],
                         "lng" => $row["longh"],

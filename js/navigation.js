@@ -1,7 +1,8 @@
 function load(page) {
     $(".page-content").load(page);
 }
-function dockLeft(){
+function dockLeft(hospital_id){
+    console.log(hospital_id);
     if($('#leftDock').hasClass('ld-hide')) {
         $('#leftDock').removeClass('ld-hide').addClass('ld-show');
     }
@@ -10,7 +11,7 @@ function dockLeft(){
     }
     infoWindow.close();
 }
-function dockRight() {
+function dockRight(hospital_id) {
     if($('#rightDock').hasClass('rd-hide')) {
         $('#rightDock').removeClass('rd-hide').addClass('rd-show');
     }

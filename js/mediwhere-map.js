@@ -42,11 +42,11 @@ function initialize() {
                 hospital.name +
             "</div>" +
             "<div class='infw-info'>" +
-                "<p id='infw-address'>" +
-                    "<i class='material-icons'>place</i> " +
-                    hospital.address +
-                "</p>" +
                 "<table>" +
+                    "<tr>" +
+                        "<th><i class='material-icons'>place</i></th>" +
+                        "<td id='infw-accessbility'>" + hospital.address +"</td>" +
+                    "</th>" +
                     "<tr>" +
                         "<th>Accessiblity</th>" +
                         "<td id='infw-accessbility'>" + numberToStar(parseFloat(hospital.accessibility)) +"</td>" +
@@ -61,8 +61,8 @@ function initialize() {
                     "</th>" +
                 "</table>" +
                 "<div>" +
-                    "<button onclick='dockLeft()' class='mdl-button mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>first_page</i>Dock Left</button>" +
-                    "<button onclick='dockRight()' class='mdl-button mdl-js-button mdl-js-ripple-effect'>Dock Right<i class='material-icons'>last_page</i></button>" +
+                    "<button onclick='dockLeft(" + hospital.id + ")' class='mdl-button mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>first_page</i>Dock Left</button>" +
+                    "<button onclick='dockRight(" + hospital.id + ")' class='mdl-button mdl-js-button mdl-js-ripple-effect'>Dock Right<i class='material-icons'>last_page</i></button>" +
                 "</div>" +
             "</div>";
         google.maps.event.addListener(hospitalMarker, 'click', function() {

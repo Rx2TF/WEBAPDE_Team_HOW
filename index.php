@@ -65,19 +65,19 @@
             $servername = "localhost";
             $username = "root";
             $password = "root";
-
+			$db = "mediwhere";
             // Create connection
-            $conn = new mysqli($servername, $username, $password);
+            $conn = new mysqli($servername, $username, $password, $db);
 
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             } 
-            //echo "Connected successfully";
-            
-            $sql = mysqli_query( $conn , "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital");
+            echo "Connected successfully";
+            $stmt = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
+            $result = mysqli_query( $conn , $stmt);
 			$rows = array();
-			while($r = mysqli_fetch_assoc($sql)) {
+			while($r = mysqli_fetch_array($result)) {
 			$rows[] = $r;
 			}
 			print json_encode($rows);

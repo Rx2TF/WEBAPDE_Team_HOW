@@ -25,9 +25,9 @@ function initialize() {
         border: '7px',})
     });
 
-    loadHospital(14.606804, 121.023479, 'San Juan Medical Center', 'N Domingo St, San Juan, Metro Manila, Philippines', 5, 4, 3);
-    loadHospital(14.59911613, 121.03168309, 'St. Martin de Porres Charity Hospital', '70 A. Bonifacio St., San Juan, Metro Manila, Philippines', 5, 4, 3);
-    loadHospital(14.597604, 121.045845, 'Cardinal Santos Medical Center', '10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines', 5, 4, 3);
+    loadHospital(14.606804, 121.023479, 'San Juan Medical Center', 'N Domingo St, San Juan, Metro Manila, Philippines', 5, 4.5, 4);
+    loadHospital(14.59911613, 121.03168309, 'St. Martin de Porres Charity Hospital', '70 A. Bonifacio St., San Juan, Metro Manila, Philippines', 3.5, 3, 2.5);
+    loadHospital(14.597604, 121.045845, 'Cardinal Santos Medical Center', '10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines', 2, 1.5, 1);
 
     // Add markers and content for each hospital in hospitals[]
     hospitals.forEach(function(hospital) {
@@ -40,27 +40,28 @@ function initialize() {
             map: map,
             title: hospital.name
         });
+
         var infoWindowContent =
             "<div id='infw-header'>" +
                 hospital.name +
             "</div>" +
             "<div class='infw-info'>" +
                 "<div id='infw-address'>" +
-                    "<i class='material-icons'>place</i>" +
-                    hospital.address
+                    "<i class='material-icons'>place</i> " +
+                    hospital.address +
                 "</div>" +
                 "<table>" +
                     "<tr>" +
                         "<th>Accessiblity</th>" +
-                        "<td id='infw-accessbility'>1</td>" +
+                        "<td id='infw-accessbility'>" + numberToStar(hospital.accessibility) +"</td>" +
                     "</th>" +
                     "<tr>" +
                         "<th>Affordability</th>" +
-                        "<td id='infw-afforability'>2</td>" +
+                        "<td id='infw-afforability'>" + numberToStar(hospital.affordability) +"</td>" +
                     "</th>" +
                     "<tr>" +
                         "<th>Ambiance</th>" +
-                        "<td id='infw-ambiance'>3</td>" +
+                        "<td id='infw-ambiance'>" + numberToStar(hospital.ambiance) +"</td>" +
                     "</th>" +
                 "</table>" +
             "</div>";
@@ -88,6 +89,24 @@ function loadHospital(latitude, longitude, hName, addrss, access, afford, ambian
         ambiance: ambian
     };
     hospitals.push(newHospital);
+}
+
+function numberToStar(rating){
+    var fullStars = Math.floor(rating);
+    var halfStars = Math.ceil(rating) - rating;
+    var emptyStars = 5 - fullStars - Math.ceil(halfStars);
+    var html = "";
+
+    for(i = 0; i < fullStars; i++){
+        html = html.concat("<i class='material-icons'>star</i>");
+    }
+    if(halfStars) {
+        html = html.concat("<i class='material-icons'>star_half</i>");
+    }
+    for(i = 0; i < emptyStars; i++){
+        html = html.concat("<i class='material-icons'>star_border</i>");
+    }
+    return html;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

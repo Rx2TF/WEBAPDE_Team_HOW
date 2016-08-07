@@ -53,19 +53,18 @@
                     <div id="leftDock" class="ld-hide">
                     Test shit.
                     </div>
-                    <div id="googleMap"></div>
+                    <div id="googleMap" class="gm-rd-hide"></div>
                     <div id="rightDock" class="rd-hide">
                     Shit test.
                     </div>
                 </div>
             </main>
         </div>
-		
-		<?php
+        <?php
             $servername = "localhost";
             $username = "root";
             $password = "root";
-			$db = "mediwhere";
+            $db = "mediwhere";
             // Create connection
             $conn = new mysqli($servername, $username, $password, $db);
 
@@ -73,15 +72,14 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             } 
-            echo "Connected successfully";
-            $stmt = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
-            $result = mysqli_query( $conn , $stmt);
-			$rows = array();
-			while($r = mysqli_fetch_array($result)) {
-			$rows[] = $r;
-			}
-			print json_encode($rows);
-		?>
+            $sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
+            $result = $conn->query($sql);
+            $hospitals = array();
+            while($row = mysqli_fetch_array($result)) {
+                $hospitals[] = $row;
+            }
+            print json_encode($hospitals);
+        ?>
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/navigation.js"></script>
         <script src="js/mediwhere-map.js"></script>

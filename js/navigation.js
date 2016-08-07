@@ -11,5 +11,9 @@ function dockRight() {
     if($('#rightDock').hasClass('rd-hide')) {
         $('#rightDock').removeClass('rd-hide').addClass('rd-show');
     }
+    if($('#googleMap').hasClass('gm-rd-hide')) {
+        $('#googleMap').removeClass('gm-rd-hide').addClass('gm-rd-show');
+        console.log("fck");
+    }
     infoWindow.close();
 }

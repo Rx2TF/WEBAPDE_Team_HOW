@@ -5,12 +5,17 @@ body, html, page-content {
 #googleMap {
     position:absolute;
     top: 0;
-    left: 0;
     width: 100%;
     height: calc(100vh - 64px);
     z-index: 0;
 }
 #leftDock {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#rightDock {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -28,11 +33,17 @@ body, html, page-content {
 .ld-hide {
     left: -420px;
 }
+#googleMap.gm-rd-show {
+    right: 420px;
+}
+#googleMap.gm-rd-hide {
+    right: 0;
+}
 .rd-show {
-    left: 0;
+    right: 0;
 }
 .rd-hide {
-    left: 420px;
+    right: -420px;
 }
 #signin-form{
     text-align: center;

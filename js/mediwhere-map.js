@@ -1,6 +1,7 @@
 var hospitals = [];
 var map;
 var window = false;
+
 function initialize() {
     var properties = {
         center: new google.maps.LatLng(14.5994146,121.03688929999998),
@@ -9,113 +10,9 @@ function initialize() {
     };
 
     map = new google.maps.Map(document.getElementById("googleMap"), properties);
-
-    //Replace with script
-    var sjmc = {lat: 14.606804, lng: 121.023479}; <!-- San Juan Medical Center Coords -->
-    var smpch = {lat: 14.59911613, lng: 121.03168309}; <!-- St. Martin de Porres Charity Hospital Coords -->
-    var csmc = {lat: 14.597604, lng: 121.045845}; <!-- Cardinal Santos Medical Center Coords -->
-
-    var sjmcmarker = new google.maps.Marker({position: sjmc, map: map, title: 'San Juan Medical Center'});
-    var smpchmarker = new google.maps.Marker({position: smpch, map: map, title: 'St. Martin de Porres Charity Hospital'});
-    var csmcmarker = new google.maps.Marker({position: csmc, map: map, title: 'Cardinal Santos Medical Center'});
-
-
-
-    var sjmccontent = '<div id="sjmccont">'
-                                +'<p id="sjmcheader">San Juan Medical Center</p>'
-                                +'<div id="sjmc-info">'
-                                +'<p>Location : N Domingo St, San Juan, Metro Manila, Philippines</p>'
-								+'<div id="a1">Accesibility :<div id="rating1"/></div>'
-								+'<div id="a2">Affordability :<div id="rating2"/></div>'
-								+'<div id="a3">Ambiance :<div id="rating3"/></div>'
-								+'<div id="see_more">See More</div>'
-                                /*+'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
-                                                                +'Dental Services<br>General Surgery<br>Ophthalmology<br>Anaesthesia<br>Pediatrics<br>Out-Patient Department<br>'
-                                                                +'Medical Social Service</p>'
-                                +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
-                                                                +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
-                                                                +'Medical Records Room<br>Dietary Room</p>'*/
-                                +'</div>'
-                                +'</div>';
-
-    var sjmcinfowindow = new google.maps.InfoWindow({
-            content: sjmccontent
-            });
-            
-    sjmcmarker.addListener('click', function() {
-        sjmcinfowindow.open(map, sjmcmarker);
-        });
-
-        
-        
-    var smpchcontent = '<div id="smpchcont">'
-                                +'<p id="smpchheader">St. Marvin de Porres Charity Hospital</p>'
-                                +'<div id="smpch-info">'
-                                +'<p>Location : 70 A. Bonifacio St., San Juan, Metro Manila, Philippines</p>'
-								+'<div id="a1">Accesibility :<div id="rating1"/></div>'
-								+'<div id="a2">Affordability :<div id="rating2"/></div>'
-								+'<div id="a3">Ambiance :<div id="rating3"/></div>'
-								+'<div id="see_more">See More</div>'
-                                /*+'<h6>Services</h6><p>General Medicine<br>Orthopedic Surgery<br>Otolaryngology<br>OB Gynecology<br>Dermatology<br>Emergency Service<br>'
-                                                                +'Dental Services<br>General Surgery<br>Ophthalmology<br>Anaesthesia<br>Pediatrics<br>Out-Patient Department<br>'
-                                                                +'Medical Social Service</p>'
-                                +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
-                                                                +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
-                                                                +'Medical Records Room<br>Dietary Room</p>'*/
-                                +'</div>'
-                                +'</div>';
-                                
-    var smpchinfowindow = new google.maps.InfoWindow({
-            content: smpchcontent
-            });
-                        
-    smpchmarker.addListener('click', function() {
-        smpchinfowindow.open(map, smpchmarker);
-        });
-
-
-
-    var csmccontent = '<div id="csmccont">'
-                                +'<p id="csmcheader">Cardinal Santos Medical Center</p>'
-                                +'<div id="csjmc-info">'
-                                +'<p>Location : 10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines</p>'
-								+'<div id="a1">Accesibility :<div id="rating1"/></div>'
-								+'<div id="a2">Affordability :<div id="rating2"/></div>'
-								+'<div id="a3">Ambiance :<div id="rating3"/></div>'
-								+'<div id="see_more">See More</div>'
-                                /*+'<h6>Services</h6><p>Anaesthology<br>Dental Services<br>Obstetrics and Gynecology<br>Ophthalmology<br>Pathology<br>Pediatrics<br>'
-                                                                +'Radiology<br>Rehabilitation<br>Surgery<br>Bone Densitometry<br>Endoscopy<br>MRI<br>Cardio-Neuro-Pulmonary Services<br>'
-                                                                +'Hemodialysis<br>Marine Medical Services</p>'
-                                +'<h6>Facilities</h6><p>Emergency Room<br>Doctor’s/Consultation Office<br>Clinical Laboratory<br>X-Ray Facility<br>Dental Room<br>'
-                                                                +'Pharmacy<br>Labor Room<br>Delivery Room<br>Operating Room<br>Recovery Room<br>Intensive Care Units<br>'
-                                                                +'Medical Records Room<br>Dietary Room<br>Cancer Center<br>Eye Center<br>Hand Center<br>Pathology and Laboratory<br>'
-                                                                +'Cardiac Catheterization Laboratory<br>Womens Care<br>Lactation Room<br>Rehabilitation Center<br>Researcg Center<br>'
-                                                                +'Urology and Stone Center<br>Wellness Center<br>Philippine Gamma Knife</p>'*/
-                                +'</div>'
-                                +'</div>';
-
-    var csmcinfowindow = new google.maps.InfoWindow({
-            content: csmccontent
-            });
-        
-    csmcmarker.addListener('click', function() {
-        csmcinfowindow.open(map, csmcmarker);
-        });
-        
-        
-    google.maps.event.addListener(sjmcinfowindow, 'domready', function() {
-        var iwOuter = $('.gm-style-iw');
-        var iwBackground = iwOuter.prev();
-        iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-        iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-        var iwCloseBtn = iwOuter.next();
-        iwCloseBtn.css({
-        right:'58px', 
-        top: '3px', 
-        border: '7px',})
-    });
     
-    google.maps.event.addListener(smpchinfowindow, 'domready', function() {
+    var infoWindow = new google.maps.InfoWindow();
+    google.maps.event.addListener(infoWindow, 'domready', function() {
         var iwOuter = $('.gm-style-iw');
         var iwBackground = iwOuter.prev();
         iwBackground.children(':nth-child(2)').css({'display' : 'none'});
@@ -126,20 +23,38 @@ function initialize() {
         top: '3px', 
         border: '7px',})
     });
-    
-    google.maps.event.addListener(csmcinfowindow, 'domready', function() {
-        var iwOuter = $('.gm-style-iw');
-        var iwBackground = iwOuter.prev();
-        iwBackground.children(':nth-child(2)').css({'display' : 'none'});
-        iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-        var iwCloseBtn = iwOuter.next();
-        iwCloseBtn.css({
-        right:'58px', 
-        top: '3px', 
-        border: '7px',})
-    });
-    //End replace
 
+    loadHospital(14.606804, 121.023479, 'San Juan Medical Center', 'N Domingo St, San Juan, Metro Manila, Philippines', 5, 4, 3);
+    loadHospital(14.59911613, 121.03168309, 'St. Martin de Porres Charity Hospital', '70 A. Bonifacio St., San Juan, Metro Manila, Philippines', 5, 4, 3);
+    loadHospital(14.597604, 121.045845, 'Cardinal Santos Medical Center', '10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines', 5, 4, 3);
+
+    // Add markers and content for each hospital in hospitals[]
+    hospitals.forEach(function(hospital) {
+        console.log(hospital);
+        var hospitalPosition = {
+            lat: hospital.lat,
+            lng: hospital.lng
+        }
+        var hospitalMarker = new google.maps.Marker({
+            position: hospitalPosition,
+            map: map,
+            title: hospital.name
+        });
+
+        var infoWindowContent = 
+            "<div>" +
+                "<div class='infw-header'>" + hospital.name + "</div>" +
+                "<div class='infw-info'>" + 
+                    "Address: " + hospital.address +
+                    "<div>"
+                "<div>" +
+            "<div>";
+
+        google.maps.event.addListener(hospitalMarker, 'click', function() {
+            infoWindow.setContent(infoWindowContent);
+            infoWindow.open(map, this);
+        });
+    }, this);
 }
 
 function loadMap() {
@@ -148,9 +63,17 @@ function loadMap() {
     document.body.appendChild(loadScript);
 }
 
-function loadHospital() {
-    hospitals.push();
+function loadHospital(latitude, longitude, hName, addrss, access, afford, ambian) {
+    var newHospital = {
+        lat: latitude,
+        lng: longitude,
+        name: hName,
+        address: addrss,
+        accessibility: access,
+        affordability: afford,
+        ambiance: ambian
+    };
+    hospitals.push(newHospital);
 }
 
-console.log("mediwhere-map.js end");
 google.maps.event.addDomListener(window, 'load', initialize);

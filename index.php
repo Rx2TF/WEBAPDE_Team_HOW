@@ -47,7 +47,7 @@
                 <button type="submit" onclick="load('signin.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                     Sign In
                 </button>
-                <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.html')"><i class="material-icons">local_hospital</i> Emergency Hotlines</a>
+                <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">local_hospital</i> Emergency Hotlines</a>
                 <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i> Doctors</a> 
                 </nav>
             </div>
@@ -78,7 +78,7 @@
                         "lat" => $row["lat"],
                         "lng" => $row["longh"],
                         "accessibility" => $row["access"],
-                        "affordablity" => $row["afford"],
+                        "affordability" => $row["afford"],
                         "ambiance" => $row["ambiance"]);
                     $hospitals[] = $hospital;
                 };

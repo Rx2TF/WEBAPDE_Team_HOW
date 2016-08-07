@@ -29,6 +29,7 @@ body, html, page-content {
 }
 .ld-show + #googleMap {
     left: 420px;
+    width: calc(100% - 420px);
 }
 .ld-hide {
     left: -420px;

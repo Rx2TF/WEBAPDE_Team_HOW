@@ -57,15 +57,15 @@ function initialize() {
                 "<table>" +
                     "<tr>" +
                         "<th>Accessiblity</th>" +
-                        "<td id='infw-accessbility'>" + numberToStar(hospital.accessibility) +"</td>" +
+                        "<td id='infw-accessbility'>" + numberToStar(parseFloat(hospital.accessibility)) +"</td>" +
                     "</th>" +
                     "<tr>" +
                         "<th>Affordability</th>" +
-                        "<td id='infw-afforability'>" + numberToStar(hospital.affordability) +"</td>" +
+                        "<td id='infw-afforability'>" + numberToStar(parseFloat(hospital.affordability)) +"</td>" +
                     "</th>" +
                     "<tr>" +
                         "<th>Ambiance</th>" +
-                        "<td id='infw-ambiance'>" + numberToStar(hospital.ambiance) +"</td>" +
+                        "<td id='infw-ambiance'>" + numberToStar(parseFloat(hospital.ambiance)) +"</td>" +
                     "</th>" +
                 "</table>" +
                 "<div>" +

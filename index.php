@@ -54,7 +54,11 @@
             <main class="mdl-layout__content">
                 <div class="page-content">
                     <div id="leftDock" class="dock ld-hide">
-                    Test shit.
+                        <div id="ld-header" class="d-header">
+                            <div id="ld-title" class="d-title">
+                            Name Here
+                            </div>
+                        </div>
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
                     <div id="rightDock" class="dock rd-hide">

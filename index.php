@@ -45,7 +45,7 @@
                     Sign In
                 </button>
                 <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.html')"><i class="material-icons">local_hospital</i> Emergency Hotlines</a>
-                <a class="mdl-navigation__link" href="#" onclick="load('doctors.html')"><i class="material-icons">assignment_ind</i> Doctors</a> 
+                <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i> Doctors</a> 
                 </nav>
             </div>
             <main class="mdl-layout__content">

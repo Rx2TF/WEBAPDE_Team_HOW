@@ -1,5 +1,3 @@
-var contacts = [];
-
 contacts.forEach(function(contact){
 	console.log(contact);
 	var hotline = 
@@ -11,7 +9,7 @@ contacts.forEach(function(contact){
     '<i class="material-icons">phone</i> '  + contact.hotline +
     '</div></div> ' ;
 	
-	document.getElementById("contflex").innerHTML = hotline;
+	document.getElementById("contflex").innerHTML += hotline;
 });
 
 

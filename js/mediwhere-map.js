@@ -27,13 +27,10 @@ function initialize() {
 
     // Add markers and content for each hospital in hospitals[]
     hospitals.forEach(function(hospital) {
-        console.log(hospital);
         var hospitalPosition = {
             lat: parseFloat(hospital.lat),
             lng: parseFloat(hospital.lng)
         }
-        console.log("lat" + hospital.lat);
-        console.log(hospitalPosition);
         var hospitalMarker = new google.maps.Marker({
             position: hospitalPosition,
             map: map,

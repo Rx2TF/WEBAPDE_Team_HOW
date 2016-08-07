@@ -82,10 +82,8 @@
                         "ambiance" => $row["ambiance"]);
                     $hospitals[] = $hospital;
                 };
-                    
                 echo json_encode($hospitals);
             ?>;
-            console.log(hospitals);
             componentHandler.upgradeAllRegistered();
         </script>
     </body>

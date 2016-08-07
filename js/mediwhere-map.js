@@ -46,10 +46,10 @@ function initialize() {
                 hospital.name +
             "</div>" +
             "<div class='infw-info'>" +
-                "<div id='infw-address'>" +
+                "<p id='infw-address'>" +
                     "<i class='material-icons'>place</i> " +
                     hospital.address +
-                "</div>" +
+                "</p>" +
                 "<table>" +
                     "<tr>" +
                         "<th>Accessiblity</th>" +

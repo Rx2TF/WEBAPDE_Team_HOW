@@ -1,3 +1,6 @@
+<?php 
+    require_once "php/mysqli_connector.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -61,17 +64,6 @@
             </main>
         </div>
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $db = "mediwhere";
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $db);
-
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
             $sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
             $result = $conn->query($sql);
             $hospitals = array();

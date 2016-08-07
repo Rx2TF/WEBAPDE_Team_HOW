@@ -22,6 +22,8 @@ CREATE TABLE `mediwhere`.`hospital` (
   `hospitalid` INT NOT NULL AUTO_INCREMENT,
   `serviceid` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
+  `lat` FLOAT NOT NULL,
+  `long` FLOAT NOT NULL,
   `hotline` VARCHAR(15) NULL,
   `access` DOUBLE NOT NULL,
   `afford` DOUBLE NOT NULL,

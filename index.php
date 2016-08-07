@@ -75,7 +75,7 @@
             } 
             //echo "Connected successfully";
             
-            $sql = mysqli_query("SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital");
+            $sql = mysqli_query( $conn , "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital");
 			$rows = array();
 			while($r = mysqli_fetch_assoc($sql)) {
 			$rows[] = $r;

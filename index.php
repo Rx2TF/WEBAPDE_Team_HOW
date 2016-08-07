@@ -33,8 +33,8 @@
                 <!-- Navigation -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <!-- TODO: replace with login check script -->
-                    <a class="mdl-navigation__link" href="#" onclick="load('doctors.html')"><i class="material-icons">assignment_ind</i></a>
-                    <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.html')"><i class="material-icons">local_hospital</i></a>
+                    <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i></a>
+                    <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">local_hospital</i></a>
                     <button type="submit" onclick="load('signin.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                         Sign In
                     </button>

@@ -36,6 +36,7 @@ body, html, page-content {
 }
 #googleMap.gm-rd-show {
     right: 420px;
+    width: calc(100% - 420px);
 }
 #googleMap.gm-rd-hide {
     right: 0;

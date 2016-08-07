@@ -13,50 +13,6 @@ input[type="search"] {
     width: 100%;
     height: 100% - 64px;
 }
-#a1{
-	position: relative;
-	height: 25px;
-}
-#a2{
-	position: relative;
-	height: 25px;
-}
-#a3{
-	position: relative;
-	height: 25px;
-}
-#rating1{
-	top: -20px;
-	left: 70px;
-	width: 100px;
-	height: 20px;
-	position: relative;
-	overflow: hidden;
-	background-image: url('img_src/rating.png');
-	background-position: 2px 102px;
-}
-
-#rating2{
-	top: -20px;
-	left: 70px;
-	width: 100px;
-	height: 20px;
-	position: relative;
-	overflow: hidden;
-	background-image: url('img_src/rating.png');
-	background-position: 2px 102px;
-}
-
-#rating3{
-	top: -20px;
-	left: 70px;
-	width: 100px;
-	height: 20px;
-	position: relative;
-	overflow: hidden;
-	background-image: url('img_src/rating.png');
-	background-position: 2px 102px;
-}
 .map {
     position: relative;
     min-width: 320px;
@@ -81,15 +37,6 @@ input[type="search"] {
 	background-color: #fff;
 	border: 1px solid #e91e63;
 	border-radius: 3px 3px 0 0;
-}
-#see_more{
-	height : 20px;
-	width : 100px;
-	text-align:center;
-	color: white;
-	background-color: #e91e63;
-	border: 1px solid #e91e63;
-	border-radius: 3px 3px 3px 3px;
 }
 #infw-header {
 	font-family: 'Open Sans Condensed', sans-serif;

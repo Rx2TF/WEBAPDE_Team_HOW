@@ -22,33 +22,33 @@ body, html, page-content {
     z-index: 1;
 }
 .dock {
-    min-width: 420px;
+    min-width: 400px;
 }
 .ld-show {
     left: 0;
 }
 .ld-show + #googleMap {
-    left: 420px;
-    width: calc(100% - 420px);
+    left: 400px;
+    width: calc(100% - 400px);
 }
 .ld-hide {
-    left: -420px;
+    left: -400px;
 }
 #googleMap.gm-rd-show {
-    right: 420px;
-    width: calc(100% - 420px);
+    right: 400px;
+    width: calc(100% - 400px);
 }
 #googleMap.gm-rd-hide {
     right: 0;
 }
 #googleMap.gm-ld-show.gm-rd-show {
-    width: calc(100% - 840px);
+    width: calc(100% - 800px);
 }
 .rd-show {
     right: 0;
 }
 .rd-hide {
-    right: -420px;
+    right: -400px;
 }
 #signin-form{
     text-align: center;

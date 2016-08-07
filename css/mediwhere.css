@@ -41,6 +41,9 @@ body, html, page-content {
 #googleMap.gm-rd-hide {
     right: 0;
 }
+#googleMap.gm-ld-show.gm-rd-show {
+    width: calc(100% - 840px);
+}
 .rd-show {
     right: 0;
 }

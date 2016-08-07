@@ -56,7 +56,7 @@
                     <div id="leftDock" class="ld-hide">
                     Test shit.
                     </div>
-                    <div id="googleMap" class="gm-rd-hide"></div>
+                    <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
                     <div id="rightDock" class="rd-hide">
                     Shit test.
                     </div>

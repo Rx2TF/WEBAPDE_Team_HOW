@@ -12,10 +12,10 @@ CREATE TABLE `mediwhere`.`users` (
 CREATE TABLE `mediwhere`.`doctors` (
   `doctorid` INT NOT NULL AUTO_INCREMENT,
   `hospitalid` INT NOT NULL,
-  `last name` VARCHAR(45) NOT NULL,
-  `first name` VARCHAR(45) NOT NULL,
-  `specialization` VARCHAR(45) NOT NULL,
-  `contact number` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `special` VARCHAR(45) NOT NULL,
+  `contact` VARCHAR(45) NULL,
   PRIMARY KEY (`doctorid`));
 
 CREATE TABLE `mediwhere`.`hospital` (
@@ -115,3 +115,4 @@ ADD CONSTRAINT `hospital`
   REFERENCES `mediwhere`.`hospital` (`hospitalid`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+

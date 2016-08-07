@@ -93,7 +93,7 @@ input[type="search"] {
 	border-radius: 3px 3px 3px 3px;
 }
 
-[id*="header"]{
+#infw-header {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 22px;
 	padding: 10px;
@@ -101,7 +101,7 @@ input[type="search"] {
 	color: white;
 	margin: 0px;
 }
-[id*="-info"]{
+.infw-info{
 	max-height:250px;
 	min-width:300px;
 	padding: 5px;

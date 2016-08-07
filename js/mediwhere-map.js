@@ -12,6 +12,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("googleMap"), properties);
     
     var infoWindow = new google.maps.InfoWindow();
+
     google.maps.event.addListener(infoWindow, 'domready', function() {
         var iwOuter = $('.gm-style-iw');
         var iwBackground = iwOuter.prev();
@@ -30,7 +31,6 @@ function initialize() {
 
     // Add markers and content for each hospital in hospitals[]
     hospitals.forEach(function(hospital) {
-        console.log(hospital);
         var hospitalPosition = {
             lat: hospital.lat,
             lng: hospital.lng
@@ -40,16 +40,30 @@ function initialize() {
             map: map,
             title: hospital.name
         });
-
-        var infoWindowContent = 
-            "<div>" +
-                "<div class='infw-header'>" + hospital.name + "</div>" +
-                "<div class='infw-info'>" + 
-                    "Address: " + hospital.address +
-                    "<div>"
-                "<div>" +
-            "<div>";
-
+        var infoWindowContent =
+            "<div id='infw-header'>" +
+                hospital.name +
+            "</div>" +
+            "<div class='infw-info'>" +
+                "<div id='infw-address'>" +
+                    "<i class='material-icons'>place</i>" +
+                    hospital.address
+                "</div>" +
+                "<table>" +
+                    "<tr>" +
+                        "<th>Accessiblity</th>" +
+                        "<td id='infw-accessbility'>1</td>" +
+                    "</th>" +
+                    "<tr>" +
+                        "<th>Affordability</th>" +
+                        "<td id='infw-afforability'>2</td>" +
+                    "</th>" +
+                    "<tr>" +
+                        "<th>Ambiance</th>" +
+                        "<td id='infw-ambiance'>3</td>" +
+                    "</th>" +
+                "</table>" +
+            "</div>";
         google.maps.event.addListener(hospitalMarker, 'click', function() {
             infoWindow.setContent(infoWindowContent);
             infoWindow.open(map, this);

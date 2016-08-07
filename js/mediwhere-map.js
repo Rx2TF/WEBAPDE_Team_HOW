@@ -1,6 +1,7 @@
 var hospitals = [];
 var map;
 var window = false;
+var infoWindow;
 
 function initialize() {
     var properties = {
@@ -11,7 +12,7 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById("googleMap"), properties);
     
-    var infoWindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
 
     google.maps.event.addListener(infoWindow, 'domready', function() {
         var iwOuter = $('.gm-style-iw');
@@ -65,8 +66,8 @@ function initialize() {
                     "</th>" +
                 "</table>" +
                 "<div>" +
-                    "<button class='mdl-button mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>first_page</i>Dock Left</button>" +
-                    "<button class='mdl-button mdl-js-button mdl-js-ripple-effect'>Dock Right<i class='material-icons'>last_page</i></button>" +
+                    "<button onclick='dockLeft()' class='mdl-button mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>first_page</i>Dock Left</button>" +
+                    "<button onclick='dockRight()' class='mdl-button mdl-js-button mdl-js-ripple-effect'>Dock Right<i class='material-icons'>last_page</i></button>" +
                 "</div>" +
             "</div>";
         google.maps.event.addListener(hospitalMarker, 'click', function() {

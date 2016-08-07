@@ -50,30 +50,35 @@
             </div>
             <main class="mdl-layout__content">
                 <div class="page-content">
+                    <div id="leftDock" class="ld-hide">
+                    Test shit.
+                    </div>
                     <div id="googleMap"></div>
+                    <div id="rightDock" class="rd-hide">
+                    Shit test.
+                    </div>
                 </div>
             </main>
         </div>
 		
 		<?php
-		$servername = "localhost";
-		$username = "root";
-		$password = "root";
+            $servername = "localhost";
+            $username = "root";
+            $password = "root";
 
-		// Create connection
-		$conn = new mysqli($servername, $username, $password);
+            // Create connection
+            $conn = new mysqli($servername, $username, $password);
 
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		} 
-		echo "Connected successfully";
-		
-		$sql = "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital";
-		$result = $conn->query($sql);
-		
-		echo json_encode($result);
-		
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            echo "Connected successfully";
+            
+            $sql = "SELECT hospitalid, serviceid, name, hotline, access, afford, ambiance FROM hospital";
+            $result = $conn->query($sql);
+            
+            echo json_encode($result);
 		?>
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/navigation.js"></script>

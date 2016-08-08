@@ -1,4 +1,5 @@
 var ajaxResult;
+var dataObject;
 
 function load(page) {
     $(".page-content").load(page);
@@ -11,7 +12,15 @@ function dockLeft(hospital_id){
         $('#googleMap').removeClass('gm-ld-hide').addClass('gm-ld-show');
     }
     infoWindow.close();
-    getHospital(hospital_id);
+    getHospital(hospital_id, "left");
+}
+function closeLeftDock() {
+    if($('#leftDock').hasClass('ld-show')) {
+        $('#leftDock').removeClass('ld-show').addClass('ld-hide');
+    }
+    if($('#googleMap').hasClass('gm-ld-show')) {
+        $('#googleMap').removeClass('gm-ld-show').addClass('gm-ld-hide');
+    }    
 }
 function dockRight(hospital_id) {
     if($('#rightDock').hasClass('rd-hide')) {
@@ -22,17 +31,22 @@ function dockRight(hospital_id) {
     }
     infoWindow.close();
 }
-function getHospital(hospital_id) {
+function setLeftDockContents(data){
+    $("#ld-name").html(data.name);
+    $("#ld-inf-address").html(data.address);
+    $("#ld-inf-hotline").html(data.hotline);
+}
+function getHospital(hospital_id, dock) {
     var hospital;
     $.post("php/get_hospital.php", {id : hospital_id}, function(result){
-        hospital = result;
-        setResult(result);
+        setResult(result, dock);
     });
-    console.log(hospital);
-    return hospital;
 }
-
-function setResult(result) {
+function setResult(result, dock) {
     ajaxResult = result;
+    dataObject = JSON.parse(ajaxResult);
     console.log(ajaxResult);
+    if(dock == "left"){
+        setLeftDockContents(dataObject);    
+    }
 }

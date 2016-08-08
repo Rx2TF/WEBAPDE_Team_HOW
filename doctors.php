@@ -8,26 +8,21 @@
 		$sql = "SELECT * FROM doctors";
 		$result = $conn->query($sql);
 		$doctors = array();
-		if (mysqli_num_rows($result) > 0) {
-			// output data of each row
-			while($row = mysqli_fetch_array($result)) {
-				$doctor = array("lname" => $row["last_name"],
-				 "fname" => $row["first_name"],
-				 "special" => $row["special"],
-				 "contact" => $row["contact"]);
-				 $doctors[] = $doctor;
-			}
-			echo json_encode($doctors);
-		} else {
-			echo "0 results";
+		while($row = mysqli_fetch_array($result)) {
+			$doctor = array("lname" => $row["last_name"],
+			 "fname" => $row["first_name"],
+			 "special" => $row["special"],
+			 "contact" => $row["contact"]);
+			 $doctors[] = $doctor;
 		}
+		echo json_encode($doctors);
 		
 	?>;
 	console.log(doctors);
     componentHandler.upgradeAllRegistered();
 </script>
 
-<div class="content-flex" id="contf">
+<div class="content-flex" id="contflex1">
     <!-- <div class="mdl-card mdl-shadow--2dp card card-doctor">
         <div class="mdl-card__title">
             <img src="http://i.imgur.com/JCTUA5k.jpg?1">
@@ -58,4 +53,5 @@
             <p>"Magnanakaw ako, para sainyo"</p>
         </div>
     </div>-->
+		<script src="js/doctors.js"></script>
 </div>

@@ -1,6 +1,6 @@
 doctors.forEach(function(doctor){
 	console.log(doctor);
-	var doc = 
+	var currentdoc = 
 	'<div class="mdl-card mdl-shadow--2dp card card-doctor">' +
     '<div class="mdl-card__title">' +
     '<img src="http://i.imgur.com/JCTUA5k.jpg?1">' +
@@ -11,5 +11,5 @@ doctors.forEach(function(doctor){
     '<p>' + doctor.contact + '</p>' +
     '</div></div>';
 	
-	document.getElementById("contf").innerHTML += doc;
+	document.getElementById("contflex1").innerHTML += currentdoc;
 });

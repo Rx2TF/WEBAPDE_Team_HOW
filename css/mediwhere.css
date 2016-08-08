@@ -29,6 +29,7 @@ body, html, page-content {
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 .dock {
+    min-width: 400px;
     max-width: 400px;
 }
 .dock i {
@@ -89,6 +90,15 @@ body, html, page-content {
     padding: 8px 24px 16px;
 }
 #ld-information i {
+    padding: 0 16px 0 0;
+}
+#rd-name {
+    font-size: 24px;
+}
+#rd-information {
+    padding: 8px 24px 16px;
+}
+#rd-information i {
     padding: 0 16px 0 0;
 }
 #signin-form{

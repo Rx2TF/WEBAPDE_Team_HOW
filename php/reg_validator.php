@@ -1,17 +1,35 @@
 <?php
-	function validate(){
-		$sql = "SELECT DISTINCT(email) FROM users WHERE email =" 'email';
-		 $result = $conn->query($sql);
-		 echo json_encode($result);
-		 if($result->num_rows == 0) {
-			if('password' == 'password-check'){
-				var execute ="load('register.html')";
-				$insertsql = 'INSERT INTO `mediwhere`.`users`(email,pword,first_name,last_name)  VALUES ("' + email + '","' + fname + '","' + lname  + '","' + password '");';
-				$conn->query(%insertsql);
-				document.getElementById(confirm).innerHTML += execute;
-				
-			} 
-		 }	 
-		 echo json_encode($contacts);
+	$servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $db = "mediwhere";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $db);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+	$sql = "SELECT DISTINCT(email) FROM users WHERE email ='".$_POST["email"]."'";
+	$result = $conn->query($sql);
+	echo json_encode($result);
+	if(mysqli_fetch_array($result) == null) {
+		echo $result;
+		if($_POST["password"] == $_POST["pcheck"]){
+			echo "accepted";
+			$insertsql = 'INSERT INTO `mediwhere`.`users`(email,pword,first_name,last_name)  VALUES ("'.$_POST["email"].'","'.$_POST["fname"].'","'.$_POST["lname"].'","'.$_POST["password"].'");';
+			$conn->query($insertsql);
+			header("Location: ../");
+			die();
+		} 
+		else{
+			header("Location: ../");
+			die();
+		}
+	}
+	else{
+		header("Location: ../");
+		die();
 	}
 ?>

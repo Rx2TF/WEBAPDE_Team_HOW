@@ -21,8 +21,17 @@
 	console.log(doctors);
     componentHandler.upgradeAllRegistered();
 </script>
+<div>
+	
+		<select>
+			<option value="OB Gynecology">OB Gynecology</option>
+			<option value="Othopedic">Orthopedic</option>
+			<option value="General Surgery">General Surgery</option>
+		</select>
 
+</div>
 <div class="content-flex" id="contflex1">
+
     <!-- <div class="mdl-card mdl-shadow--2dp card card-doctor">
         <div class="mdl-card__title">
             <img src="http://i.imgur.com/JCTUA5k.jpg?1">
@@ -53,5 +62,10 @@
             <p>"Magnanakaw ako, para sainyo"</p>
         </div>
     </div>-->
+	
+	
+	
+	</script>
+		<script>componentHandler.upgradeAllRegistered();</script>
 		<script src="js/doctors.js"></script>
 </div>

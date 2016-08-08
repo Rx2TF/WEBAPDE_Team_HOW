@@ -85,7 +85,34 @@
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
                     <div id="rightDock" class="dock rd-hide">
-                    Shit test.
+                        <div id="rd-header" class="d-header">
+                            <div id="rd-title" class="d-title">
+                                <h1 id="rd-name">Name Here</h1>
+                            </div>
+                            <button id="rd-close" onclick="closeLeftDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <div id="rd-information">
+                            <table>
+                                <tr>
+                                    <th><i class='material-icons'>place</i></th>
+                                    <td id="rd-inf-address">Address</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons">local_phone</i></th>
+                                    <td id="rd-inf-hotline">Contact Number</td>
+                                </tr>
+                            </table>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class='material-icons'>assignment_ind</i>
+                                <span id="rd-inf-doctors">Doctors</span>
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <i class='material-icons'>local_hospital</i>
+                                <span id="rd-inf-services">Services</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </main>

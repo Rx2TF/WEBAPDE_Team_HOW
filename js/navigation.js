@@ -44,11 +44,17 @@ function setLeftDockContents(data){
     $("#ld-name").html(data.name);
     $("#ld-inf-address").html(data.address);
     $("#ld-inf-hotline").html(data.hotline);
+    $("#ld-inf-accessibility").html(numberToStar(data.accessibility));
+    $("#ld-inf-affordability").html(numberToStar(data.affordability));
+    $("#ld-inf-ambiance").html(numberToStar(data.ambiance));
 }
 function setRightDockContents(data){
     $("#rd-name").html(data.name);
     $("#rd-inf-address").html(data.address);
     $("#rd-inf-hotline").html(data.hotline);
+    $("#rd-inf-accessibility").html(numberToStar(data.accessibility));
+    $("#rd-inf-affordability").html(numberToStar(data.affordability));
+    $("#rd-inf-ambiance").html(numberToStar(data.ambiance));
 }
 function getHospital(hospital_id, dock) {
     var hospital;

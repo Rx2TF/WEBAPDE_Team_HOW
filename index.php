@@ -81,6 +81,38 @@
                                 <i class='material-icons'>local_hospital</i>
                                 <span id="ld-inf-services">Services</span>
                             </button>
+                            <table class="dock-rating-table">
+                                <tr>
+                                    <th>Accessibility</th>
+                                    <td id="ld-inf-accessibility">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Affordability</th>
+                                    <td id="ld-inf-affordability">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Ambiance</th>
+                                    <td id="ld-inf-ambiance">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
@@ -112,6 +144,38 @@
                                 <i class='material-icons'>local_hospital</i>
                                 <span id="rd-inf-services">Services</span>
                             </button>
+                            <table class="dock-rating-table">
+                                <tr>
+                                    <th>Accessibility</th>
+                                    <td id="rd-inf-accessibility">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Affordability</th>
+                                    <td id="rd-inf-affordability">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Ambiance</th>
+                                    <td id="rd-inf-ambiance">
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                        <i class='material-icons'>star</i>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

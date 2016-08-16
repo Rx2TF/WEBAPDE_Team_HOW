@@ -30,11 +30,17 @@ function dockRight(hospital_id) {
         $('#googleMap').removeClass('gm-rd-hide').addClass('gm-rd-show');
     }
     infoWindow.close();
+    getHospital(hospital_id, "right");
 }
 function setLeftDockContents(data){
     $("#ld-name").html(data.name);
     $("#ld-inf-address").html(data.address);
     $("#ld-inf-hotline").html(data.hotline);
+}
+function setRightDockContents(data){
+    $("#rd-name").html(data.name);
+    $("#rd-inf-address").html(data.address);
+    $("#rd-inf-hotline").html(data.hotline);
 }
 function getHospital(hospital_id, dock) {
     var hospital;
@@ -47,6 +53,9 @@ function setResult(result, dock) {
     dataObject = JSON.parse(ajaxResult);
     console.log(ajaxResult);
     if(dock == "left"){
-        setLeftDockContents(dataObject);    
+        setLeftDockContents(dataObject);
+    }
+    else if(dock == "right"){
+        setRightDockContents(dataObject);
     }
 }

@@ -89,7 +89,7 @@
                             <div id="rd-title" class="d-title">
                                 <h1 id="rd-name">Name Here</h1>
                             </div>
-                            <button id="rd-close" onclick="closeLeftDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                            <button id="rd-close" onclick="closeRightDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                                 <i class="material-icons">close</i>
                             </button>
                         </div>

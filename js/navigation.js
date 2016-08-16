@@ -22,6 +22,14 @@ function closeLeftDock() {
         $('#googleMap').removeClass('gm-ld-show').addClass('gm-ld-hide');
     }    
 }
+function closeRightDock() {
+    if($('#rightDock').hasClass('rd-show')) {
+        $('#rightDock').removeClass('rd-show').addClass('rd-hide');
+    }
+    if($('#googleMap').hasClass('gm-rd-show')) {
+        $('#googleMap').removeClass('gm-rd-show').addClass('gm-rd-hide');
+    }    
+}
 function dockRight(hospital_id) {
     if($('#rightDock').hasClass('rd-hide')) {
         $('#rightDock').removeClass('rd-hide').addClass('rd-show');

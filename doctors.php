@@ -31,41 +31,8 @@
 
 </div>-->
 <div class="content-flex" id="contflex1">
-
-    <!-- <div class="mdl-card mdl-shadow--2dp card card-doctor">
-        <div class="mdl-card__title">
-            <img src="http://i.imgur.com/JCTUA5k.jpg?1">
-        </div>
-        <div class="mdl-card__supporting-text">
-            <h4>Sabayton, Jun</h4>
-            <h5>OBGYN</h5>
-            <p>"Magnanakaw ako, para sainyo"</p>
-        </div>
-    </div>
-    <div class="mdl-card mdl-shadow--2dp card card-doctor">
-        <div class="mdl-card__title">
-            <img src="http://i.imgur.com/JCTUA5k.jpg?1">
-        </div>
-        <div class="mdl-card__supporting-text">
-            <h4>Sabayton, Jun</h4>
-            <h5>OBGYN</h5>
-            <p>"Magnanakaw ako, para sainyo"</p>
-        </div>
-    </div>
-    <div class="mdl-card mdl-shadow--2dp card card-doctor">
-        <div class="mdl-card__title">
-            <img src="http://i.imgur.com/JCTUA5k.jpg?1">
-        </div>
-        <div class="mdl-card__supporting-text">
-            <h4>Sabayton, Jun</h4>
-            <h5>OBGYN</h5>
-            <p>"Magnanakaw ako, para sainyo"</p>
-        </div>
-    </div>-->
-	
-	
-	
-	</script>
-		<script>componentHandler.upgradeAllRegistered();</script>
-		<script src="js/doctors.js"></script>
+		<script>
+			componentHandler.upgradeAllRegistered();
+			displayDoctors();
+		</script>
 </div>

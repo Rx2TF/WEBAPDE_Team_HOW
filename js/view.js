@@ -1,3 +1,5 @@
+var ajaxResult;
+var dataObject;
 var map;
 var window = false;
 var infoWindow;
@@ -103,3 +105,114 @@ google.maps.event.addDomListener(document.getElementById('googleMap'), "bounds_c
     google.maps.event.trigger(map, "resize");
     map.setCenter(curCenter);
 });
+
+function load(page) {
+    $(".page-content").load(page);
+}
+function dockLeft(hospital_id){
+    if($('#leftDock').hasClass('ld-hide')) {
+        $('#leftDock').removeClass('ld-hide').addClass('ld-show');
+    }
+    if($('#googleMap').hasClass('gm-ld-hide')) {
+        $('#googleMap').removeClass('gm-ld-hide').addClass('gm-ld-show');
+    }
+    infoWindow.close();
+    getHospital(hospital_id, "left");
+}
+function closeLeftDock() {
+    if($('#leftDock').hasClass('ld-show')) {
+        $('#leftDock').removeClass('ld-show').addClass('ld-hide');
+    }
+    if($('#googleMap').hasClass('gm-ld-show')) {
+        $('#googleMap').removeClass('gm-ld-show').addClass('gm-ld-hide');
+    }    
+}
+function closeRightDock() {
+    if($('#rightDock').hasClass('rd-show')) {
+        $('#rightDock').removeClass('rd-show').addClass('rd-hide');
+    }
+    if($('#googleMap').hasClass('gm-rd-show')) {
+        $('#googleMap').removeClass('gm-rd-show').addClass('gm-rd-hide');
+    }    
+}
+function dockRight(hospital_id) {
+    if($('#rightDock').hasClass('rd-hide')) {
+        $('#rightDock').removeClass('rd-hide').addClass('rd-show');
+    }
+    if($('#googleMap').hasClass('gm-rd-hide')) {
+        $('#googleMap').removeClass('gm-rd-hide').addClass('gm-rd-show');
+    }
+    infoWindow.close();
+    getHospital(hospital_id, "right");
+}
+function setLeftDockContents(data){
+    $("#ld-name").html(data.name);
+    $("#ld-inf-address").html(data.address);
+    $("#ld-inf-hotline").html(data.hotline);
+    $("#ld-inf-accessibility").html(numberToStar(data.accessibility));
+    $("#ld-inf-affordability").html(numberToStar(data.affordability));
+    $("#ld-inf-ambiance").html(numberToStar(data.ambiance));
+}
+function setRightDockContents(data){
+    $("#rd-name").html(data.name);
+    $("#rd-inf-address").html(data.address);
+    $("#rd-inf-hotline").html(data.hotline);
+    $("#rd-inf-accessibility").html(numberToStar(data.accessibility));
+    $("#rd-inf-affordability").html(numberToStar(data.affordability));
+    $("#rd-inf-ambiance").html(numberToStar(data.ambiance));
+}
+function getHospital(hospital_id, dock) {
+    var hospital;
+    $.post("php/get_hospital.php", {id : hospital_id}, function(result){
+        setResult(result, dock);
+    });
+}
+function setResult(result, dock) {
+    ajaxResult = result;
+    dataObject = JSON.parse(ajaxResult);
+    console.log(ajaxResult);
+    if(dock == "left"){
+        setLeftDockContents(dataObject);
+    }
+    else if(dock == "right"){
+        setRightDockContents(dataObject);
+    }
+}
+function displayDoctors(){
+	
+	doctors.forEach(function(doctor){
+		console.log(doctor);
+		var currentdoc = 
+		'<div class="mdl-card mdl-shadow--2dp card card-doctor">' +
+		'<div class="mdl-card__title">' +
+		'<img src="http://i.imgur.com/JCTUA5k.jpg?1">' +
+		'</div>' +
+		'<div class="mdl-card__supporting-text">' +
+		'<h4>' + doctor.lname + ',' + doctor.fname + '</h4>' +
+		'<h5>' + doctor.special + '</h5>' +
+		'<p> Contact Details : ' + doctor.contact + '</p>' +
+		'</div></div>';
+		
+		document.getElementById("contflex1").innerHTML += currentdoc;
+	});
+	
+}
+
+function displayEmergency(){
+	
+	contacts.forEach(function(contact){
+		console.log(contact);
+		var hotline = 
+		'<div class="mdl-card mdl-shadow--2dp card">' +
+		'<div class="mdl-card__title">' +
+		'<h2 class="mdl-card__title-text">' + contact.name + '</h2>' +
+		'</div>' +
+		'<div class="mdl-card__supporting-text">'  +
+		'<i class="material-icons">phone</i> '  + contact.hotline +
+		'</div></div> ' ;
+		
+		document.getElementById("contflex").innerHTML += hotline;
+	});
+	
+}
+

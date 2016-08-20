@@ -182,8 +182,7 @@
             </main>
         </div>
         <script src="js/jquery-3.1.0.min.js"></script>
-        <script src="js/navigation.js"></script>
-        <script src="js/mediwhere-map.js"></script>
+		<script src="js/view.js"></script>
         <script>
             var hospitals = 
             <?php

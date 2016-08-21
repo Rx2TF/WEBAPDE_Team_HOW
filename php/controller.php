@@ -60,5 +60,21 @@
 		 return $contacts;
 	}
 
-
+	function getHospital(){
+		global $conn;
+		$sql = "SELECT hospitalid, serviceid, hospital_name, address, hotline, access, afford, ambiance FROM hospital WHERE hospitalid =" . $_POST['id'];
+		$result = $conn->query($sql);
+		while($row = mysqli_fetch_array($result)) {
+			$hospital = array(
+			"id" => $row["hospitalid"],
+			"service_id" => $row["serviceid"],
+			"name" => $row["hospital_name"],
+			"address" => $row["address"],
+			"hotline" => $row["hotline"],
+			"accessibility" => $row["access"],
+			"affordability" => $row["afford"],
+			"ambiance" => $row["ambiance"]);
+		};
+		echo json_encode($hospital);
+	}
 ?>

@@ -1,5 +1,5 @@
 <?php 
-    require_once "php/mysqli_connector.php";
+    require_once "php/controller.php";
 ?>
 
 <!DOCTYPE HTML>
@@ -45,7 +45,7 @@
     </form>
 <div>
 </div>
-<script src = "js/register.js"></script>
+<script src = "js/view.js"></script>
 <script>
     componentHandler.upgradeAllRegistered();
 </script>

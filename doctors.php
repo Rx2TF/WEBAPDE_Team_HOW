@@ -1,22 +1,11 @@
 <!DOCTYPE HTML>
 <?php
-	require_once "php/mysqli_connector.php";
+	require_once "php/controller.php";
 ?>
 <script>
 	var doctors = 
 	<?php	
-		$sql = "SELECT * FROM doctors";
-		$result = $conn->query($sql);
-		$doctors = array();
-		while($row = mysqli_fetch_array($result)) {
-			$doctor = array("lname" => $row["last_name"],
-			 "fname" => $row["first_name"],
-			 "special" => $row["special"],
-			 "contact" => $row["contact"]);
-			 $doctors[] = $doctor;
-		}
-		echo json_encode($doctors);
-		
+		echo json_encode(getAllDoctors());
 	?>;
 	console.log(doctors);
     componentHandler.upgradeAllRegistered();

@@ -1,5 +1,5 @@
 <?php 
-    require_once "php/mysqli_connector.php";
+	require_once "php/controller.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -186,22 +186,7 @@
         <script>
             var hospitals = 
             <?php
-                $sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
-                $result = $conn->query($sql);
-                $hospitals = array();
-                while($row = mysqli_fetch_array($result)) {
-                    $hospital = array(
-                        "id" => $row["hospitalid"],
-                        "name" => $row["hospital_name"],
-                        "address" => $row["address"],
-                        "lat" => $row["lat"],
-                        "lng" => $row["longh"],
-                        "accessibility" => $row["access"],
-                        "affordability" => $row["afford"],
-                        "ambiance" => $row["ambiance"]);
-                    $hospitals[] = $hospital;
-                };
-                echo json_encode($hospitals);
+				echo json_encode(getAllHospitals());
             ?>;
             componentHandler.upgradeAllRegistered();
         </script>

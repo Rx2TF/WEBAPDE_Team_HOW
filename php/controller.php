@@ -75,6 +75,6 @@
 			"affordability" => $row["afford"],
 			"ambiance" => $row["ambiance"]);
 		};
-		echo json_encode($hospital);
+		return $hospital;
 	}
 ?>

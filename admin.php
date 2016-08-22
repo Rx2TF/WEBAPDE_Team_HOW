@@ -1,9 +1,15 @@
+<!DOCTYPE HTML>
 <?php 
     require_once "php/controller.php";
 ?>
-
-<!DOCTYPE HTML>
-<script src = "js/view.js"></script>
+<script>
+	var hospital_names =
+		<?php
+			echo json_encode(getHospitalNames());
+		?>;
+		console.log(hospital_names);
+		componentHandler.upgradeAllRegistered();
+</script>
 <div class="content">
 <div class="mw-container-small mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
@@ -22,12 +28,8 @@
 
             <div class="mdl-select mdl-js-select mdl-select--floating-label">
                 <select class="mdl-select__input" id="hospitalname" name="hospitalname">
-                <option value="selection_main">Select Hospital</option>
+                <option value="selection_main" id="drop_down_hospital">Select Hospital</option>
                 <script>
-					var hospital_names =
-					<?php
-						echo json_encode(getHospitalNames());
-					?>;
 					componentHandler.upgradeAllRegistered();
 					displayHospitalNames();
 				</script>
@@ -52,8 +54,5 @@
 			</button>
         </div>
     </form>
-<div>
 </div>
-<script>
-    componentHandler.upgradeAllRegistered();
-</script>
+</div>

@@ -221,11 +221,10 @@ function displayHospitalNames(){
 	hospital_names.forEach(function(hospital_name){
 		console.log(hospital_name);
 		var currentname = 
-		'<option value="option1">' +
+		'<option value="option">' +
 		hospital_name.name +
 		'</option>';
-		document.getElementById("hospitalname").innerHTML += hotline;
+		document.getElementById("drop_down_hospital").innerHTML += currentname;
 	});
 	
 }
-

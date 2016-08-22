@@ -34,9 +34,10 @@
                 <!-- Navigation -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <!-- TODO: replace with login check script -->
+					<a class="mdl-navigation__link" href="#" onclick="load('admin.php')"><i class="material-icons">group_add</i></a>
                     <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i></a>
                     <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i></a>
-                    <button type="submit" onclick="load('addHospital.php')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                    <button type="submit" onclick="load('register.php')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                         Sign In
                     </button>
                 </nav>
@@ -48,6 +49,7 @@
                 <button type="submit" onclick="load('signin.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                     Sign In
                 </button>
+				<a class="mdl-navigation__link" href="#" onclick="load('admin.php')"><i class="material-icons">group_add</i> Add Hospital</a>
                 <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i> Emergency Hotlines</a>
                 <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i> Doctors</a> 
                 </nav>

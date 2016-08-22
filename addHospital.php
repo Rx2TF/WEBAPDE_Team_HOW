@@ -8,7 +8,7 @@
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">Add Hospital</h2>
     </div>
-    <form action="php/reg_validator.php" id="registration-form" method="POST">
+    <form action="php/add_hospital.php" id="addhospital-form" method="POST">
         <div class="mdl-card__supporting-text">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="givenName"  name="fname"required>
@@ -19,10 +19,16 @@
                 <label class="mdl-textfield__label" for="lastName" >Address</label>
             </div>
 
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="password" name="password" required>
+                <label class="mdl-textfield__label" for="password">Contact Number</label>
+                <span class="mdl-textfield__error">Enter a valid contact number.</span>
+            </div>
+			
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <label class="mdl-textfield__label" for="check" >Check Available Services of the Hospital</label>
             </div>
-
+			
             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
                 <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
                 <span class="mdl-checkbox__label">Anesthesiology</span>
@@ -177,12 +183,6 @@
                 <input type="checkbox" id="checkbox-31" class="mdl-checkbox__input">
                 <span class="mdl-checkbox__label">Vitreo - Retina</span>
             </label>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="password" id="password" name="password" required>
-                <label class="mdl-textfield__label" for="password">Contact Number</label>
-                <span class="mdl-textfield__error">Enter a valid contact number.</span>
-            </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">

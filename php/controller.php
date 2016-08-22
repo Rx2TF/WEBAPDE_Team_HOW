@@ -76,5 +76,17 @@
 			"ambiance" => $row["ambiance"]);
 		};
 		return $hospital;
+		
+	}
+	
+	function addUser($email, $pword, $fname, $lname){
+		
+		global $conn;
+		$sql = 'INSERT INTO `mediwhere`.`users`(email,pword,first_name,last_name)  VALUES ("'.$email.'","'.$pword.'","'.$fname.'","'.$lname.'");';
+		$conn->query($sql);
+	}
+	
+	function addHospital(){
+		
 	}
 ?>

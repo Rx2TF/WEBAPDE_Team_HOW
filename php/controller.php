@@ -89,4 +89,17 @@
 	function addHospital(){
 		
 	}
+	
+	function getHospitalNames(){
+		global $conn;
+		$sql = "SELECT hospitalid, hospital_name FROM hospital";
+		$result =  $conn->query($sql);
+		$hospital_names = array();
+		while($row = mysqli_fetch_array($result)) {
+			$hospital_name = array("id" => $row["hospitalid"],
+				"name" => $row["hospital_name"]);
+			$hospital_names[] = $hospital_name;
+		}
+		return $hospital_names;
+	}
 ?>

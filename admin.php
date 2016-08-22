@@ -3,6 +3,7 @@
 ?>
 
 <!DOCTYPE HTML>
+<script src = "js/view.js"></script>
 <div class="content">
 <div class="mw-container-small mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
@@ -20,25 +21,28 @@
             </div>
 
             <div class="mdl-select mdl-js-select mdl-select--floating-label">
-                <select class="mdl-select__input" id="professsion" name="professsion">
-                <option value=""></option>
-                <option value="option1">option 1</option>
-                <option value="option2">option 2</option>
-                <option value="option3">option 3</option>
-                <option value="option4">option 4</option>
-                <option value="option5">option 5</option>
+                <select class="mdl-select__input" id="hospitalname" name="hospitalname">
+                <option value="selection_main">Select Hospital</option>
+                <script>
+					var hospital_names =
+					<?php
+						echo json_encode(getHospitalNames());
+					?>;
+					componentHandler.upgradeAllRegistered();
+					displayHospitalNames();
+				</script>
                 </select>
-                <label class="mdl-select__label" for="professsion">Hospital</label>
+                <label class="mdl-select__label" for="hospitalname">Hospital</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" id="email" name="email" required>
-                <label class="mdl-textfield__label" for="email">Specialty</label>
+                <input class="mdl-textfield__input" id="specialty" name="specialty" required>
+                <label class="mdl-textfield__label" for="specialty">Specialty</label>
                 
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="password" id="password" name="password" required>
-                <label class="mdl-textfield__label" for="password">Contact Number</label>
+                <input class="mdl-textfield__input" type="contactno" id="contactno" name="contactno" required>
+                <label class="mdl-textfield__label" for="contactno">Contact Number</label>
                 <span class="mdl-textfield__error">Enter a valid contact number.</span>
             </div>
         </div>
@@ -46,15 +50,10 @@
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">
 				Add
 			</button>
-			
-            <!--<button onclick="load('register.html')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                Register
-            </button> -->
         </div>
     </form>
 <div>
 </div>
-<script src = "js/view.js"></script>
 <script>
     componentHandler.upgradeAllRegistered();
 </script>

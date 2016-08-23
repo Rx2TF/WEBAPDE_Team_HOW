@@ -80,13 +80,32 @@
 	}
 	
 	function addUser($email, $pword, $fname, $lname){
-		
 		global $conn;
 		$sql = 'INSERT INTO `mediwhere`.`users`(email,pword,first_name,last_name)  VALUES ("'.$email.'","'.$pword.'","'.$fname.'","'.$lname.'");';
 		$conn->query($sql);
 	}
 	
-	function addHospital(){
+	function addHospital($name, $address, $contact){
+		
+	}
+	
+	
+	function addDoctor($fname, $lname, $hospital, $specialty, $contactno){
+		global $conn;
+		$sqlcheck = 'SELECT * FROM doctors WHERE last_name = "' + $lname + '" AND first_name = "' + 
+							$fname + '" AND hospitalid = (SELECT hospital_id FROM hospital WHERE hospital_name = "'+ $hospital + '")';
+		$result = $conn->query($sql);
+		$row = mysqli_fetch_array($result);
+		$rlname = $row["last_name"];
+		$rfname = $row["first_name"];
+		if($lname != $rlname && $fname != $rfname){
+			echo "<script type='text/javascript'>alert('Added New Doctor');</script>";
+			echo "header('Location: ../');";
+		}
+		else{
+			echo "<script type='text/javascript'>alert('Doctor Exists);</script>";
+			echo "header('Location: ../');";
+		}
 		
 	}
 	

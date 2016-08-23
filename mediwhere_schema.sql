@@ -130,3 +130,6 @@ INSERT INTO `mediwhere`.`doctors`(hospitalid, last_name, first_name, special, co
 VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069"),
 	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292"),
 	  (3, "Agdamag", "Aaron", "General Surgery", "7261810");
+
+INSERT INTO `mediwhere`.`admins`(email, pword, first_name, last_name)
+VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos");

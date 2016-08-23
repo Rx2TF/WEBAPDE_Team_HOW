@@ -217,14 +217,38 @@ function displayEmergency(){
 }
 
 function displayHospitalNames(){
-	
+	var c = 0;
+	var addname = '<option value="selection_main" id="drop_down_hospital">Select Hospital</option>';
+	document.getElementById("hospitalname").innerHTML += addname;
 	hospital_names.forEach(function(hospital_name){
 		console.log(hospital_name);
 		var currentname = 
-		'<option value="option">' +
+		'<option value="option' + c +  '">' +
 		hospital_name.name +
 		'</option>';
-		document.getElementById("drop_down_hospital").innerHTML += currentname;
+		document.getElementById("hospitalname").innerHTML += currentname;
+		c++;
 	});
+	
+}
+
+function setCookie(){
+	
+}
+
+function checkAdminPriv() {
+    var type=getCookie("type");
+    if (type == "admin") {
+        var visible = '<style>  #visible {visibility : visible;}  <style>';
+		document.getElementById("visible").innerHTML += currentname;
+    } 
+	else {
+		var visible = '<style>  #visible {visibility : hidden;}  <style>';
+		document.getElementById("visible").innerHTML += currentname;
+  
+    }
+}
+
+function delCookie(){
 	
 }

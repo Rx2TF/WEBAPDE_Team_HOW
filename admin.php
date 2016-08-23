@@ -15,7 +15,7 @@
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">Add Doctor</h2>
     </div>
-    <form action="php/reg_validator.php" id="registration-form" method="POST">
+    <form action="php/add_doctor.php" id="adddoctor-form" method="POST">
         <div class="mdl-card__supporting-text">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="givenName"  name="fname"required>
@@ -28,7 +28,7 @@
 
             <div class="mdl-select mdl-js-select mdl-select--floating-label">
                 <select class="mdl-select__input" id="hospitalname" name="hospitalname">
-                <option value="selection_main" id="drop_down_hospital">Select Hospital</option>
+                
                 <script>
 					componentHandler.upgradeAllRegistered();
 					displayHospitalNames();

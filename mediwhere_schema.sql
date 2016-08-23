@@ -7,6 +7,7 @@ CREATE TABLE `mediwhere`.`users` (
   `pword` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
+  `admin` BIT NOT NULL,
   PRIMARY KEY (`userid`));
 
 CREATE TABLE `mediwhere`.`doctors` (
@@ -66,14 +67,6 @@ CREATE TABLE `mediwhere`.`services` (
   `vitreo` BIT NOT NULL,
   PRIMARY KEY (`serviceid`));
 
-CREATE TABLE `mediwhere`.`admins` (
-  `adminid` INT NOT NULL AUTO_INCREMENT,
-  `email` VARCHAR(45) NOT NULL,
-  `pword` VARCHAR(45) NOT NULL,
-  `first_name` VARCHAR(45) NOT NULL,
-  `last_name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`adminid`));
-
 CREATE TABLE `mediwhere`.`comments` (
   `commentid` BIGINT NOT NULL AUTO_INCREMENT,
   `hospital` INT NOT NULL,
@@ -131,5 +124,6 @@ VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069"),
 	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292"),
 	  (3, "Agdamag", "Aaron", "General Surgery", "7261810");
 
-INSERT INTO `mediwhere`.`admins`(email, pword, first_name, last_name)
-VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos");
+INSERT INTO `mediwhere`.`users`(email, pword, first_name, last_name, admin)
+VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos", 1),
+	  ("rickng17@gmail.com", "1234", "Maverick", "Ng", 0);

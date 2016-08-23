@@ -92,21 +92,18 @@
 	
 	function addDoctor($fname, $lname, $hospital, $specialty, $contactno){
 		global $conn;
-		$sqlcheck = 'SELECT * FROM doctors WHERE last_name = "' + $lname + '" AND first_name = "' + 
-							$fname + '" AND hospitalid = (SELECT hospital_id FROM hospital WHERE hospital_name = "'+ $hospital + '")';
-		$result = $conn->query($sql);
-		$row = mysqli_fetch_array($result);
-		$rlname = $row["last_name"];
-		$rfname = $row["first_name"];
-		if($lname != $rlname && $fname != $rfname){
-			echo "<script type='text/javascript'>alert('Added New Doctor');</script>";
-			echo "header('Location: ../');";
+		$sqls = 'SELECT hospitalid FROM hospital WHERE hospital_name = "'.$hospital.'";';
+		$result = $conn->query($sqls);
+		$hospitals = array();
+		while($row = mysqli_fetch_array($result)){
+			$hospitals[] = $row["hospitalid"];
 		}
-		else{
-			echo "<script type='text/javascript'>alert('Doctor Exists);</script>";
-			echo "header('Location: ../');";
-		}
-		
+		$sql = 'INSERT INTO `mediwhere`.`doctors`(hospitalid,last_name,first_name,special,contact)  VALUES ('.$hospitals[0].',"'.$lname.'","'.$fname.'","'.$specialty.'","'.$contactno.'");';
+		echo $sql;
+		$conn->query($sql);
+		echo "<script type='text/javascript'>alert('Added New Doctor');</script>";
+		//header('Location: ../'); 	
+			
 	}
 	
 	function getHospitalNames(){

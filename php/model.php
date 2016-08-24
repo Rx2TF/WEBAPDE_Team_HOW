@@ -30,13 +30,14 @@
 	
 	function getAllHospitals(){
 		global $conn;
-		$sql = "SELECT hospitalid, serviceid, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
+		$sql = "SELECT hospitalid, serviceid, user, hospital_name, address, lat, longh, hotline, access, afford, ambiance FROM hospital";
 		$result =  $conn->query($sql);
 		$hospitals = array();
 		while($row = mysqli_fetch_array($result)) {
 			$hospital = array(
 				"id" => $row["hospitalid"],
 				"name" => $row["hospital_name"],
+				"userid" => $row["user"],
 				"address" => $row["address"],
 				"lat" => $row["lat"],
 				"lng" => $row["longh"],
@@ -85,11 +86,6 @@
 		$sql = 'INSERT INTO `mediwhere`.`users`(email,pword,first_name,last_name)  VALUES ("'.$email.'","'.$pword.'","'.$fname.'","'.$lname.'");';
 		$conn->query($sql);
 	}
-	
-	function addHospital($name, $address, $contact){
-		
-	}
-	
 	
 	function addDoctor($fname, $lname, $hospital, $specialty, $contactno){
 		global $conn;

@@ -23,6 +23,7 @@ CREATE TABLE `mediwhere`.`doctors` (
 CREATE TABLE `mediwhere`.`hospital` (
   `hospitalid` INT NOT NULL AUTO_INCREMENT,
   `serviceid` INT NOT NULL,
+  `user` INT NOT NULL,
   `hospital_name` VARCHAR(100) NOT NULL,
   `address` VARCHAR(500) NOT NULL,
   `lat` FLOAT NOT NULL,
@@ -95,6 +96,16 @@ ADD CONSTRAINT `hospitalid`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
+ALTER TABLE `mediwhere`.`hospital` 
+ADD INDEX `user_idx` (`user` ASC);
+ALTER TABLE `mediwhere`.`hospital` 
+ADD CONSTRAINT `user`
+  FOREIGN KEY (`user`)
+  REFERENCES `mediwhere`.`users` (`userid`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
 ALTER TABLE `mediwhere`.`comments` 
 ADD INDEX `userid_idx` (`userid` ASC);
 ALTER TABLE `mediwhere`.`comments` 
@@ -116,10 +127,10 @@ VALUES(1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1,1,0,1,1,1,0,1,1,1,0,1,0),
       (1,0,1,1,0,1,1,0,1,1,1,1,0,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,0,1,1),
 	  (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 
-INSERT INTO `mediwhere`.`hospital`(serviceid, hospital_name , address, lat,longh,hotline,access,afford,ambiance)
-VALUES(1, "San Juan Medical Center", "N Domingo St, San Juan, Metro Manila, Philippines", 14.606804, 121.023479, "(02) 724 3266", 5, 4.5, 4),
-      (2, "St. Martin De Porres Charity Hospital", "70 A. Bonifacio St., San Juan, Metro Manila, Philippines", 14.59911613, 121.03168309, "(072) 307 4143", 3.5, 3, 2.5),
-      (3, "Cardinal Santos Medical Center", "10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines", 14.597604, 121.045845, "(02) 727 0001", 2, 1.5, 1);
+INSERT INTO `mediwhere`.`hospital`(serviceid, user, hospital_name , address, lat,longh,hotline,access,afford,ambiance)
+VALUES(1, 2, "San Juan Medical Center", "N Domingo St, San Juan, Metro Manila, Philippines", 14.606804, 121.023479, "(02) 724 3266", 5, 4.5, 4),
+      (2, 2, "St. Martin De Porres Charity Hospital", "70 A. Bonifacio St., San Juan, Metro Manila, Philippines", 14.59911613, 121.03168309, "(072) 307 4143", 3.5, 3, 2.5),
+      (3, 2, "Cardinal Santos Medical Center", "10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines", 14.597604, 121.045845, "(02) 727 0001", 2, 1.5, 1);
 
 INSERT INTO `mediwhere`.`doctors`(hospitalid, last_name, first_name, special, contact, picurl)
 VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069", "http://i.imgur.com/JCTUA5k.jpg?1"),

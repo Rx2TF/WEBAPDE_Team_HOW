@@ -1,5 +1,5 @@
 <?php
-	require_once "controller.php";
+	require_once "model.php";
 	
 	$sql = "SELECT DISTINCT(email) FROM users WHERE email ='".$_POST["email"]."'";
 	$result = $conn->query($sql);
@@ -13,11 +13,11 @@
 		} 
 		else{
 			echo  "<script type='text/javascript'>alert('Password do not match!');</script>";
-			die();
+			header("Location: ../");
 		}
 	}
 	else{
 		echo  "<script type='text/javascript'>alert('Email already used!');</script>";
-		die();
+		header("Location: ../");
 	}
 ?>

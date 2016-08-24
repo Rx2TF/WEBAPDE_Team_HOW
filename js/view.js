@@ -218,7 +218,7 @@ function initialize() {
 		google.maps.event.addListener(addMarker, 'click', function() {
             infoWindow2.setContent(infoWindowNewContent);
             infoWindow2.open(map, this);
-        });*/
+        });
 	});
 	
 	 /*google.maps.event.addListener(infoWindow2, 'domready', function() {

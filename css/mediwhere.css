@@ -118,6 +118,11 @@ body, html, page-content {
     max-width: 480px;
     margin: auto ;
 }
+.mw-container-small2 {
+    min-width: 250px;
+    max-width: 350px;
+    margin: auto ;
+}
 .mw-link-no-decor {
     text-decoration: none;
     color: white;
@@ -126,6 +131,13 @@ body, html, page-content {
     position: relative;
     top: 48px;
 }
+
+.contents {
+    position: relative;
+    top: 0px;
+	
+}
+
 .content-flex{
     margin: auto;
     display: flex;

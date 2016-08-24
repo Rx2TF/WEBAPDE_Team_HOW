@@ -38,6 +38,16 @@ input[type="search"] {
 	border: 1px solid #e91e63;
 	border-radius: 3px 3px 0 0;
 }
+.gm-style-iw2 {
+	min-height:250px;
+	max-width:300px;
+	top: 0 !important;
+	left: 0 !important;
+	background-color: #fff;
+	border: 1px solid #e91e63;
+	border-radius: 3px 3px 0 0;
+}
+
 #infw-header {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 22px;

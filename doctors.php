@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-	require_once "php/controller.php";
+	require_once "php/model.php";
 ?>
 <script>
 	var doctors = 

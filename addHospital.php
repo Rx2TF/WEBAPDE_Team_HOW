@@ -1,5 +1,5 @@
 <?php 
-    require_once "php/controller.php";
+    require_once "php/model.php";
 ?>
 
 <!DOCTYPE HTML>

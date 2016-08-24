@@ -25,13 +25,31 @@ function initialize() {
 			addMarker.setMap(null);
 		}
 		addMarker = new google.maps.Marker({position: event.latLng, map: map});
-
+		
+		/*var infoWindowAddHospital = 
+			"<div id='infw-header' onclick=" + '"load(' + "'addHospital.php')" + '">Add Hospital Here</div>';*/
+		
 		google.maps.event.addListener(addMarker, 'click', function() {
-			 load('addHospital.php');
+			//infoWindow.setContent(infoWindowAddHospital);
+            //infoWindow.open(map, this);
+			load('addHospital.php');
         });
+		
+		/*google.maps.event.addListener(infoWindowAddHospital, 'domready', function() {
+        var iwOuter = $('.gm-style-iw2');
+        var iwBackground = iwOuter.prev();
+        iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+        iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+        var iwCloseBtn = iwOuter.next();
+        iwCloseBtn.css({
+        right:'58px', 
+        top: '3px', 
+        border: '7px',})
+		});*/
+		
 	});
 	
-    google.maps.event.addListener(infoWindow, 'domready', function() {
+		google.maps.event.addListener(infoWindow, 'domready', function() {
         var iwOuter = $('.gm-style-iw');
         var iwBackground = iwOuter.prev();
         iwBackground.children(':nth-child(2)').css({'display' : 'none'});

@@ -96,16 +96,6 @@ ADD CONSTRAINT `hospitalid`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
-ALTER TABLE `mediwhere`.`hospital` 
-ADD INDEX `user_idx` (`user` ASC);
-ALTER TABLE `mediwhere`.`hospital` 
-ADD CONSTRAINT `user`
-  FOREIGN KEY (`user`)
-  REFERENCES `mediwhere`.`users` (`userid`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
-
 ALTER TABLE `mediwhere`.`comments` 
 ADD INDEX `userid_idx` (`userid` ASC);
 ALTER TABLE `mediwhere`.`comments` 

@@ -123,10 +123,10 @@ VALUES(1, "San Juan Medical Center", "N Domingo St, San Juan, Metro Manila, Phil
 
 INSERT INTO `mediwhere`.`doctors`(hospitalid, last_name, first_name, special, contact, picurl)
 VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069", "http://i.imgur.com/JCTUA5k.jpg?1"),
-	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292"),
-	  (3, "Agdamag", "Aaron", "General Surgery", "7261810");
+	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292", "http://cardinalsantos.com.ph/wp-content/uploads/AGBAYANI-BENIGNO-JR.-A.-100x100.jpg"),
+	  (3, "Agdamag", "Aaron", "General Surgery", "7261810", "http://cardinalsantos.com.ph/wp-content/uploads/AGDAMAG-AARON-Q.-100x100.jpg");
 
 INSERT INTO `mediwhere`.`users`(email, pword, first_name, last_name, admin)
-VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos", 1),
-	  ("rickng17@gmail.com", "1234", "Maverick", "Ng", 0);
-	  (""
+VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos", 2),
+	  ("rickng17@gmail.com", "1234", "Maverick", "Ng", 0),
+	  ("dawnvalor.rs@gmail.com", "1234", "Rofi", "Santos", 1);

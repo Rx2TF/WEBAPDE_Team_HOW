@@ -7,7 +7,7 @@ CREATE TABLE `mediwhere`.`users` (
   `pword` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `admin` BIT NOT NULL,
+  `admin` INT NOT NULL,
   PRIMARY KEY (`userid`));
 
 CREATE TABLE `mediwhere`.`doctors` (
@@ -17,6 +17,7 @@ CREATE TABLE `mediwhere`.`doctors` (
   `first_name` VARCHAR(45) NOT NULL,
   `special` VARCHAR(45) NOT NULL,
   `contact` VARCHAR(45) NULL,
+  `picurl` VARCHAR(1000) NULL,
   PRIMARY KEY (`doctorid`));
 
 CREATE TABLE `mediwhere`.`hospital` (
@@ -30,6 +31,7 @@ CREATE TABLE `mediwhere`.`hospital` (
   `access` DOUBLE NOT NULL,
   `afford` DOUBLE NOT NULL,
   `ambiance` DOUBLE NOT NULL,
+  `picurl` VARCHAR(1000) NULL,
   PRIMARY KEY (`hospitalid`));
 
 CREATE TABLE `mediwhere`.`services` (
@@ -119,11 +121,12 @@ VALUES(1, "San Juan Medical Center", "N Domingo St, San Juan, Metro Manila, Phil
       (2, "St. Martin De Porres Charity Hospital", "70 A. Bonifacio St., San Juan, Metro Manila, Philippines", 14.59911613, 121.03168309, "(072) 307 4143", 3.5, 3, 2.5),
       (3, "Cardinal Santos Medical Center", "10 Wilson St. Greenhills West, San Juan City, Metro Manila, Philippines", 14.597604, 121.045845, "(02) 727 0001", 2, 1.5, 1);
 
-INSERT INTO `mediwhere`.`doctors`(hospitalid, last_name, first_name, special, contact)
-VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069"),
+INSERT INTO `mediwhere`.`doctors`(hospitalid, last_name, first_name, special, contact, picurl)
+VALUES(1, "Sabayton", "Rodolfo", "OB Gynecology", "09694834069", "http://i.imgur.com/JCTUA5k.jpg?1"),
 	  (3, "Agbayani", "Benigno Jr.", "Orthopedic", "7108292"),
 	  (3, "Agdamag", "Aaron", "General Surgery", "7261810");
 
 INSERT INTO `mediwhere`.`users`(email, pword, first_name, last_name, admin)
 VALUES("rofisantos@outlook.com", "1234", "Rofi", "Santos", 1),
 	  ("rickng17@gmail.com", "1234", "Maverick", "Ng", 0);
+	  (""

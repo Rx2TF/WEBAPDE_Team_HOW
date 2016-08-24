@@ -6,6 +6,7 @@ var infoWindow;
 var infoWindow2;
 var latitude;
 var longitude;
+var addMarker;
 
 function initialize() {
     var properties = {
@@ -20,9 +21,11 @@ function initialize() {
 	infoWindow2 = new google.maps.InfoWindow();
 
 	google.maps.event.addListener(map, 'click', function(event) {
-		marker = new google.maps.Marker({position: event.latLng, map: map});
+		this.addMarker = null;
+		this.addMarker = new google.maps.Marker({position: event.latLng, map: map});
 		
-		var infoWindowNewContent = '<div class="contents">'+
+		
+/*		var infoWindowNewContent = '<div class="contents">'+
 '<div class="mw-container-small2 mdl-card mdl-shadow--2dp">'+
  '   <div class="mdl-card__title">'+
   '      <h2 class="mdl-card__title-text">Add Hospital</h2>'+
@@ -188,37 +191,37 @@ function initialize() {
               '  <span class="mdl-checkbox__label">Rheumatology</span>'+
             '</label>'+
 
-            '<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-29">'+
-             '   <input type="checkbox" id="checkbox-29" class="mdl-checkbox__input">'+
-              '  <span class="mdl-checkbox__label">Thoracic and Cardiovascular</span>'+
-            '</label>'+
+				'<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-29">'+
+					'<input type="checkbox" id="checkbox-29" class="mdl-checkbox__input">'+
+					'<span class="mdl-checkbox__label">Thoracic and Cardiovascular</span>'+
+				'</label>'+
 
-            '<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-30">'+
-             '   <input type="checkbox" id="checkbox-30" class="mdl-checkbox__input">'+
-              '  <span class="mdl-checkbox__label">Urology</span>'+
-            '</label>'+
+					'<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-30">'+
+						'   <input type="checkbox" id="checkbox-30" class="mdl-checkbox__input">'+
+						'  <span class="mdl-checkbox__label">Urology</span>'+
+					'</label>'+
 
-            '<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-31">'+
-             '   <input type="checkbox" id="checkbox-31" class="mdl-checkbox__input">'+
-              '  <span class="mdl-checkbox__label">Vitreo - Retina</span>'+
-            '</label>'+
-        '</div>'+
-        '<div class="mdl-card__actions mdl-card--border">'+
-		'	<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">'+
-		'		Add'+
-		'	</button>'+
-        '</div>'+
-    '</form>'+
-'<div>'+
-'</div>';
+					'<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-31">'+
+						'<input type="checkbox" id="checkbox-31" class="mdl-checkbox__input">'+
+						'<span class="mdl-checkbox__label">Vitreo - Retina</span>'+
+					'</label>'+
+				'</div>'+
+				'<div class="mdl-card__actions mdl-card--border">'+
+					'<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">'+
+						'Add'+
+					'</button>'+
+				'</div>'+
+			'</form>'+
+		'<div>'+
+	'</div>';*/
 		
-		google.maps.event.addListener(marker, 'click', function() {
+		google.maps.event.addListener(addMarker, 'click', function() {
             infoWindow2.setContent(infoWindowNewContent);
             infoWindow2.open(map, this);
-        });
+        });*/
 	});
 	
-	 google.maps.event.addListener(infoWindow2, 'domready', function() {
+	 /*google.maps.event.addListener(infoWindow2, 'domready', function() {
         var iwOuter = $('.gm-style-iw2');
         var iwBackground = iwOuter.prev();
         iwBackground.children(':nth-child(2)').css({'display' : 'none'});
@@ -228,7 +231,7 @@ function initialize() {
         right:'58px', 
         top: '3px', 
         border: '7px',})
-    });
+    });*/
 	
     google.maps.event.addListener(infoWindow, 'domready', function() {
         var iwOuter = $('.gm-style-iw');
@@ -400,7 +403,7 @@ function displayDoctors(){
 		var currentdoc = 
 		'<div class="mdl-card mdl-shadow--2dp card card-doctor">' +
 		'<div class="mdl-card__title">' +
-		'<img src="http://i.imgur.com/JCTUA5k.jpg?1">' +
+		'<img src="'+ doctor.url +'">' +
 		'</div>' +
 		'<div class="mdl-card__supporting-text">' +
 		'<h4>' + doctor.lname + ',' + doctor.fname + '</h4>' +
@@ -444,26 +447,5 @@ function displayHospitalNames(){
 		document.getElementById("hospitalname").innerHTML += currentname;
 		c++;
 	});
-	
-}
-
-function setCookie(){
-	
-}
-
-function checkAdminPriv() {
-    var type=getCookie("type");
-    if (type == "admin") {
-        var visible = '<style>  #visible {visibility : visible;}  <style>';
-		document.getElementById("visible").innerHTML += currentname;
-    } 
-	else {
-		var visible = '<style>  #visible {visibility : hidden;}  <style>';
-		document.getElementById("visible").innerHTML += currentname;
-  
-    }
-}
-
-function delCookie(){
 	
 }

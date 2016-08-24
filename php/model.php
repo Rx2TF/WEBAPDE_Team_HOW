@@ -21,7 +21,8 @@
 			$doctor = array("lname" => $row["last_name"],
 			 "fname" => $row["first_name"],
 			 "special" => $row["special"],
-			 "contact" => $row["contact"]);
+			 "contact" => $row["contact"],
+			 "url" => $row["picurl"]);
 			 $doctors[] = $doctor;
 		}
 		return $doctors;

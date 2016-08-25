@@ -274,8 +274,21 @@ function signin(){
 	console.log(form);
 	$.ajax({
 		url: "php/login.php",
-		method: "POST",
+		type: "POST",
 		data: form,
-		success: 
+		success: function(userExist){
+			 if (userExist) {
+				 console.log("Login successful!");
+				 $.ajax({
+					 url: "php/startSession.php",
+					 type: "POST"
+				 });
+				 //console.log("redirecting...");
+				 //window.location = "index.php";
+			}
+			else{
+				console.log("Invalid username / password.");
+			}
+		}
 	});
 }

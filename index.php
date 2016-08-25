@@ -1,5 +1,6 @@
 <?php 
 	require_once "php/model.php";
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +35,21 @@
                 <!-- Navigation -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <!-- TODO: replace with login check script -->
-					<a class="mdl-navigation__link" href="#" onclick="load('superAdmin.php')" id="visible"><i class="material-icons">supervisor_account</i></a>
-					<a class="mdl-navigation__link" href="#" onclick="load('admin.php')" id="visible"><i class="material-icons">business</i></a>
-					<a class="mdl-navigation__link" href="#" onclick="load('admin.php')" id="visible"><i class="material-icons">group_add</i></a>
-                    <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i></a>
+					
+					<?php
+					if(isset($_SESSION["admin"])){
+						echo $_SESSION["admin"];
+							switch($_SESSION["admin"]){
+						case 2:
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'superAdmin.php')" + '"><i class="material-icons">supervisor_account</i></a>';
+						case 1:
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'admin.php')" + '"><i class="material-icons">business</i></a>';
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'admin.php')" + '"><i class="material-icons">group_add</i></a>';
+						}
+					}
+				
+                    ?>
+					<a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i></a>
                     <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i></a>
                     <button type="submit" onclick="load('signin.php')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                         Sign In
@@ -51,9 +63,15 @@
                 <button type="submit" onclick="load('signin.php')" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                     Sign In
                 </button>
-				<a class="mdl-navigation__link" href="#" onclick="load('superAdmin.php')"><i class="material-icons">group_add</i> Change User Priviledges</a>
-				<a class="mdl-navigation__link" href="#" onclick="load('admin.php')"><i class="material-icons">group_add</i> Edit Hospital</a>
-				<a class="mdl-navigation__link" href="#" onclick="load('admin.php')"><i class="material-icons">group_add</i> Add Doctor</a>
+				<?php
+					switch($_SESSION["admin"]){
+						case 2:
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'superAdmin.php')" + '"><i class="material-icons">supervisor_account</i>Change User Privilidges</a>';
+						case 1:
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'admin.php')" + '"><i class="material-icons">business</i>Add Hospital</a>';
+							echo '<a class="mdl-navigation__link" href="#" onclick="load(' + "'admin.php')" + '"><i class="material-icons">group_add</i>Add Doctor</a>';
+					}
+                    ?>
                 <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i> Emergency Hotlines</a>
                 <a class="mdl-navigation__link" href="#" onclick="load('doctors.php')"><i class="material-icons">assignment_ind</i> Doctors</a> 
                 </nav>

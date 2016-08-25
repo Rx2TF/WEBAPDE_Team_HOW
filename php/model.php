@@ -22,7 +22,8 @@
 			 "fname" => $row["first_name"],
 			 "special" => $row["special"],
 			 "contact" => $row["contact"],
-			 "url" => $row["picurl"]);
+			 "url" => $row["picurl"],
+			 "hospitalid" => $row["hospitalid"]);
 			 $doctors[] = $doctor;
 		}
 		return $doctors;

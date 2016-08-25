@@ -25,6 +25,12 @@
     </head>
 
     <body>
+		<script>
+		var doctors = 
+		<?php	
+			echo json_encode(getAllDoctors());
+		?>;
+		</script>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
@@ -79,130 +85,9 @@
             <main class="mdl-layout__content">
                 <div class="page-content">
                     <div id="leftDock" class="dock ld-hide">
-                        <div id="ld-header" class="d-header">
-                            <div id="ld-title" class="d-title">
-                                <h1 id="ld-name">Name Here</h1>
-                            </div>
-                            <button id="ld-close" onclick="closeLeftDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons">close</i>
-                            </button>
-                        </div>
-                        <div id="ld-information">
-                            <table>
-                                <tr>
-                                    <th><i class='material-icons'>place</i></th>
-                                    <td id="ld-inf-address">Address</td>
-                                </tr>
-                                <tr>
-                                    <th><i class="material-icons">local_phone</i></th>
-                                    <td id="ld-inf-hotline">Contact Number</td>
-                                </tr>
-                            </table>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class='material-icons'>assignment_ind</i>
-                                <span id="ld-inf-doctors">Doctors</span>
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class='material-icons'>local_hospital</i>
-                                <span id="ld-inf-services">Services</span>
-                            </button>
-                            <table class="dock-rating-table">
-                                <tr>
-                                    <th>Accessibility</th>
-                                    <td id="ld-inf-accessibility">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Affordability</th>
-                                    <td id="ld-inf-affordability">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Ambiance</th>
-                                    <td id="ld-inf-ambiance">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
                     </div>
                     <div id="googleMap" class="gm-ld-hide gm-rd-hide"></div>
                     <div id="rightDock" class="dock rd-hide">
-                        <div id="rd-header" class="d-header">
-                            <div id="rd-title" class="d-title">
-                                <h1 id="rd-name">Name Here</h1>
-                            </div>
-                            <button id="rd-close" onclick="closeRightDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons">close</i>
-                            </button>
-                        </div>
-                        <div id="rd-information">
-                            <table>
-                                <tr>
-                                    <th><i class='material-icons'>place</i></th>
-                                    <td id="rd-inf-address">Address</td>
-                                </tr>
-                                <tr>
-                                    <th><i class="material-icons">local_phone</i></th>
-                                    <td id="rd-inf-hotline">Contact Number</td>
-                                </tr>
-                            </table>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class='material-icons'>assignment_ind</i>
-                                <span id="rd-inf-doctors">Doctors</span>
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                                <i class='material-icons'>local_hospital</i>
-                                <span id="rd-inf-services">Services</span>
-                            </button>
-                            <table class="dock-rating-table">
-                                <tr>
-                                    <th>Accessibility</th>
-                                    <td id="rd-inf-accessibility">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Affordability</th>
-                                    <td id="rd-inf-affordability">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Ambiance</th>
-                                    <td id="rd-inf-ambiance">
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                        <i class='material-icons'>star</i>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
                 </div>
             </main>
         </div>

@@ -20,6 +20,7 @@ body, html, page-content {
     z-index: 1;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     transition: all .5s ease;
+	overflow : scroll;
 }
 #rightDock {
     position: absolute;
@@ -27,6 +28,7 @@ body, html, page-content {
     bottom: 0;
     z-index: 1;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	overflow : scroll;
 }
 .dock {
     min-width: 400px;

@@ -7,6 +7,8 @@ var infoWindow2;
 var latitude;
 var longitude;
 var addMarker = null;
+var ldid;
+var rdid;
 
 function initialize() {
     var properties = {
@@ -116,6 +118,54 @@ function loadMap() {
     document.body.appendChild(loadScript);
 }
 
+function changeLDock(){
+	$("#leftDock").html('<button id="ld-close" onclick="closeLeftDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">close</i></button>');
+	console.log(ldid);
+	doctors.forEach(function(doctor){
+		if(doctor.hospitalid == ldid){
+			console.log(doctor);
+			var currentdoc = 
+			'<div class="mdl-card mdl-shadow--2dp card card-doctor">' +
+			'<div class="mdl-card__title">' +
+			'<img src="'+ doctor.url +'">' +
+			'</div>' +
+			'<div class="mdl-card__supporting-text">' +
+			'<h4>' + doctor.lname + ',' + doctor.fname + '</h4>' +
+			'<h5>' + doctor.special + '</h5>' +
+			'<p> Contact Details : ' + doctor.contact + '</p>' +
+			'</div></div>';
+			
+			document.getElementById("leftDock").innerHTML += currentdoc;
+		}
+		
+	});
+	
+}
+
+function changeRDock(){
+	console.log(rdid);
+	$("#rightDock").html('<button id="rd-close" onclick="closeRightDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">close</i></button>');
+	doctors.forEach(function(doctor){
+		if(doctor.hospitalid == rdid){
+			console.log(doctor);
+			var currentdoc = 
+			'<div class="mdl-card mdl-shadow--2dp card card-doctor">' +
+			'<div class="mdl-card__title">' +
+			'<img src="'+ doctor.url +'">' +
+			'</div>' +
+			'<div class="mdl-card__supporting-text">' +
+			'<h4>' + doctor.lname + ',' + doctor.fname + '</h4>' +
+			'<h5>' + doctor.special + '</h5>' +
+			'<p> Contact Details : ' + doctor.contact + '</p>' +
+			'</div></div>';
+			
+			document.getElementById("rightDock").innerHTML += currentdoc;
+		}
+		
+	});
+	
+}
+
 function numberToStar(rating){
     var fullStars = Math.floor(rating);
     var halfStars = Math.ceil(rating) - rating;
@@ -182,6 +232,53 @@ function dockRight(hospital_id) {
     getHospital(hospital_id, "right");
 }
 function setLeftDockContents(data){
+	var html_left = '<div id="ld-header" class="d-header">' +
+                            '<div id="ld-title" class="d-title">' +
+                                '<h1 id="ld-name">Name Here</h1>' +
+                            '</div>' +
+                            '<button id="ld-close" onclick="closeLeftDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">' +
+                             '   <i class="material-icons">close</i>' +
+                            '</button>' +
+                        '</div>' +
+                        '<div id="ld-information">' +
+                         '   <table>' +
+                          '      <tr>' +
+                            "        <th><i class='material-icons'>place</i></th> " +
+                              '      <td id="ld-inf-address">Address</td>' +
+                              '  </tr>' +
+                              '  <tr>' +
+                               '     <th><i class="material-icons">local_phone</i></th>' +
+                                '    <td id="ld-inf-hotline">Contact Number</td>' +
+                                '</tr>' +
+                            '</table>' +
+                            '<button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="changeLDock()">' +
+                             "   <i class='material-icons'>assignment_ind</i> " +
+                               ' <span id="ld-inf-doctors">Doctors</span>' +
+                            '</button>' +
+                            '<button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="changeLDock()">' +
+                             "   <i class='material-icons'>local_hospital</i> " +
+                               ' <span id="ld-inf-services">Services</span>' +
+                            '</button>' +
+                            '<table class="dock-rating-table">' +
+                             '   <tr>' +
+                              '      <th>Accessibility</th>' +
+                               '     <td id="ld-inf-accessibility">' +
+                                   ' </td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                 '   <th>Affordability</th>' +
+                                  '  <td id="ld-inf-affordability">' +
+                                   ' </td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                 '   <th>Ambiance</th>' +
+                                  '  <td id="ld-inf-ambiance">' +
+                                   ' </td>' +
+                                '</tr>' +
+                            '</table>' +
+                        '</div>';
+	
+	$("#leftDock").html(html_left);
     $("#ld-name").html(data.name);
     $("#ld-inf-address").html(data.address);
     $("#ld-inf-hotline").html(data.hotline);
@@ -190,6 +287,53 @@ function setLeftDockContents(data){
     $("#ld-inf-ambiance").html(numberToStar(data.ambiance));
 }
 function setRightDockContents(data){
+	var html_right =	'<div id="rd-header" class="d-header">' +
+                     '       <div id="rd-title" class="d-title">' +
+                      '          <h1 id="rd-name">Name Here</h1>' +
+                       '     </div>' +
+                        '    <button id="rd-close" onclick="closeRightDock()" class="mdl-button mdl-js-button mdl-js-ripple-effect">' +
+                         '       <i class="material-icons">close</i>' +
+                          '  </button>' +
+                       ' </div>' +
+                        '<div id="rd-information">' +
+                         '   <table>' +
+                          '      <tr>' +
+                           "         <th><i class='material-icons'>place</i></th> "+
+                             '       <td id="rd-inf-address">Address</td>' +
+                              '  </tr>' +
+                               ' <tr>' +
+                                '    <th><i class="material-icons">local_phone</i></th>' +
+                                 '   <td id="rd-inf-hotline">Contact Number</td>' +
+                               ' </tr>' +
+                           ' </table>' +
+                            '<button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="changeRDock()" >' +
+                             "   <i class='material-icons'>assignment_ind</i>" +
+                             '   <span id="rd-inf-doctors">Doctors</span>' +
+                            '</button>' +
+                           ' <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="changeRDock()">' +
+                            "    <i class='material-icons'>local_hospital</i> " +
+                              '  <span id="rd-inf-services">Services</span>' +
+                            '</button>' +
+                            '<table class="dock-rating-table">' +
+                             '   <tr>' +
+                              '      <th>Accessibility</th>' +
+                               '     <td id="rd-inf-accessibility">' +
+                               '     </td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                 '   <th>Affordability</th>' +
+                                  '  <td id="rd-inf-affordability">' +
+                                   ' </td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                 '   <th>Ambiance</th>' +
+                                  '  <td id="rd-inf-ambiance">' +
+                                 '   </td>' +
+                               ' </tr>' +
+                           ' </table>' +
+                       ' </div>' +
+                    '</div>';
+	$("#rightDock").html(html_right);
     $("#rd-name").html(data.name);
     $("#rd-inf-address").html(data.address);
     $("#rd-inf-hotline").html(data.hotline);

@@ -44,7 +44,8 @@
 				"lng" => $row["longh"],
 				"accessibility" => $row["access"],
 				"affordability" => $row["afford"],
-				"ambiance" => $row["ambiance"]);
+				"ambiance" => $row["ambiance"],
+				"hotline" => $row["hotline"]);
 			$hospitals[] = $hospital;
 		}
 		return $hospitals;
@@ -63,9 +64,9 @@
 		 return $contacts;
 	}
 
-	function getHospital(){
+	function getHospital($id){
 		global $conn;
-		$sql = "SELECT hospitalid, serviceid, hospital_name, address, hotline, access, afford, ambiance FROM hospital WHERE hospitalid =" . $_POST['id'];
+		$sql = "SELECT hospitalid, serviceid, hospital_name, address, hotline, access, afford, ambiance FROM hospital WHERE hospitalid =".$id;
 		$result = $conn->query($sql);
 		while($row = mysqli_fetch_array($result)) {
 			$hospital = array(

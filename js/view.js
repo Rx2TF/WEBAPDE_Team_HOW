@@ -9,7 +9,7 @@ var longitude;
 var addMarker = null;
 var ldid;
 var rdid;
-
+var currHospital; 
 function initialize() {
     var properties = {
         center: new google.maps.LatLng(14.5994146,121.03688929999998),
@@ -232,6 +232,7 @@ function dockRight(hospital_id) {
     getHospital(hospital_id, "right");
 }
 function setLeftDockContents(data){
+	ldid = data.id;
 	var html_left = '<div id="ld-header" class="d-header">' +
                             '<div id="ld-title" class="d-title">' +
                                 '<h1 id="ld-name">Name Here</h1>' +
@@ -287,6 +288,7 @@ function setLeftDockContents(data){
     $("#ld-inf-ambiance").html(numberToStar(data.ambiance));
 }
 function setRightDockContents(data){
+	rdid = data.id;
 	var html_right =	'<div id="rd-header" class="d-header">' +
                      '       <div id="rd-title" class="d-title">' +
                       '          <h1 id="rd-name">Name Here</h1>' +
@@ -396,6 +398,28 @@ function displayEmergency(){
 	
 }
 
+function displayHospitals(){
+	hospitals.forEach(function(hospital){
+		console.log(hospital);
+		var hotline = 
+		'<div class="mdl-card mdl-shadow--2dp card"  id="'+ hospital.id +'" onclick=load("hospital_editor.php")>' +
+		'<div class="mdl-card__title">' +
+		'<h2 class="mdl-card__title-text">' + hospital.name + '</h2>' +
+		'</div>' +
+		'<div class="mdl-card__supporting-text">'  +
+		hospital.address +
+		'</div>'+
+		'<div class="mdl-card__supporting-text">'  +
+		'<i class="material-icons">phone</i> '  + hospital.hotline +
+		'</div></div> ';
+		document.getElementById("contflex2").innerHTML += hotline;
+	});
+	
+}
+
+function  passhospitalID(id){
+	currHospital = id;
+}
 function displayHospitalNames(){
 	var c = 0;
 	var addname = '<option value="selection_main" id="drop_down_hospital">Select Hospital</option>';

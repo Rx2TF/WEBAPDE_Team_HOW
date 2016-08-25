@@ -32,6 +32,8 @@ function initialize() {
 		google.maps.event.addListener(addMarker, 'click', function() {
 			//infoWindow.setContent(infoWindowAddHospital);
             //infoWindow.open(map, this);
+			latitude = addMarker.getPosition().lat();
+			longitude = addMarker.getPosition().lng();
 			load('addHospital.php');
         });
 		
@@ -264,4 +266,16 @@ function displayHospitalNames(){
 		c++;
 	});
 	
+}
+
+function signin(){
+	console.log("yey");
+	var form = $("#signin-form").serializeArray();
+	console.log(form);
+	$.ajax({
+		url: "php/login.php",
+		method: "POST",
+		data: form,
+		success: 
+	});
 }

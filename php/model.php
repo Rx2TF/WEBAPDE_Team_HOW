@@ -87,7 +87,7 @@
 		$conn->query($sql);
 	}
 	
-	function addDoctor($fname, $lname, $hospital, $specialty, $contactno){
+	function addDoctor($fname, $lname, $hospital, $specialty, $contactno, $picurl){
 		global $conn;
 		$sqls = 'SELECT hospitalid FROM hospital WHERE hospital_name = "'.$hospital.'";';
 		$result = $conn->query($sqls);
@@ -95,11 +95,11 @@
 		while($row = mysqli_fetch_array($result)){
 			$hospitals[] = $row["hospitalid"];
 		}
-		$sql = 'INSERT INTO `mediwhere`.`doctors`(hospitalid,last_name,first_name,special,contact)  VALUES ('.$hospitals[0].',"'.$lname.'","'.$fname.'","'.$specialty.'","'.$contactno.'");';
+		$sql = 'INSERT INTO `mediwhere`.`doctors`(hospitalid,last_name,first_name,special,contact,picurl)  VALUES ('.$hospitals[0].',"'.$lname.'","'.$fname.'","'.$specialty.'","'.$contactno.'","'.$picurl.'");';
 		echo $sql;
 		$conn->query($sql);
 		echo "<script type='text/javascript'>alert('Added New Doctor');</script>";
-		//header('Location: ../'); 	
+		header('Location: ../'); 	
 			
 	}
 	
@@ -114,5 +114,39 @@
 			$hospital_names[] = $hospital_name;
 		}
 		return $hospital_names;
+	}
+	
+	function isValidUser($username, $password){
+		global $conn;
+		$sql = 'SELECT * FROM users WHERE email = "'.$username.'" AND password = "'.$password.'";';
+		$result =  $conn->query($sql);
+		$users = array();
+		while($row = mysqli_fetch_array($result)) {
+			$user = array("username" => $row["email"],
+				"password" => $row["password"]);
+			$users[] = $user;
+		}
+		if($users[0] == null){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	function getUser($username, $password){
+		global $conn;
+		$sql = 'SELECT * FROM users WHERE email = "'.$username.'" AND password = "'.$password.'";';
+		$result =  $conn->query($sql);
+		$user = null;
+		while($row = mysqli_fetch_array($result)) {
+			$user = array("username" => $row["email"],
+				"password" => $row["password"],
+				"lname" => $row["last_name"],
+				"fname" => $row["first_name"],
+				"admin" => $row["admin"]);
+				
+		}
+		return $user;
 	}
 ?>

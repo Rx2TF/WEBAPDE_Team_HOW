@@ -47,6 +47,11 @@
                 <label class="mdl-textfield__label" for="contactno">Contact Number</label>
                 <span class="mdl-textfield__error">Enter a valid contact number.</span>
             </div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" id="picurl" name="picurl" required>
+                <label class="mdl-textfield__label" for="picurl">Picture Link</label>
+                
+            </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="confirm">

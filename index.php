@@ -57,7 +57,9 @@
                     <a class="mdl-navigation__link" href="#" onclick="load('emergency-numbers.php')"><i class="material-icons">report_problem</i></a>
                     <?php
                         if(isset($_SESSION["username"])){
-                            echo "Hello, ".$_SESSION["first_name"];
+                            echo "Hello, ".$_SESSION["first_name"]."! ";
+                            echo '<form action="php\logout.php" method="POST"><button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">'."Sign Out</button></form>";
+                            echo "<script>componentHandler.upgradeAllRegistered();</script>";
                         }
                         else{
                             echo '<button type="submit" onclick="load('."'signin.php')".'" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">'."Sign In"."</button>";
@@ -72,7 +74,9 @@
                 <nav class="mdl-navigation">
                 <?php
                     if(isset($_SESSION["username"])){
-                        echo "Hello, ".$_SESSION["first_name"];
+                        echo "Hello, ".$_SESSION["first_name"]."! ";
+                        echo '<form action="php\logout.php" method="POST"><button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">'."Sign Out</button></form>";
+                        echo "<script>componentHandler.upgradeAllRegistered();</script>";
                     }
                     else{
                         echo '<button type="submit" onclick="load('."'signin.php')".'" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">'."Sign In"."</button>";

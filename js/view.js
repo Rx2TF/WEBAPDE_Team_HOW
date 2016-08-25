@@ -460,3 +460,15 @@ function signin(){
 		}
 	});
 }
+
+function signOut(){
+    console.log("signing out");
+    $.ajax({
+		url: "php/logout.php",
+		type: "POST",
+		success: function(){
+            window.location = "index.php";
+            console.log("signed out!");
+		}
+	});
+}
